@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!--
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="Users_login" class="action.UserAction" method="login">
+            <result name="login_success_student">/index.student.jsp</result>
+            <result name="login_success_teacher">/index.teacher.jsp</result>
+            <result name="login_success_manager">/index.manager.jsp</result>
+            <result name="login_failure">/jsp/login.jsp</result>
+        </action>
+    </package>
+    -->
+    <!-- Add packages here -->
+
+</struts>

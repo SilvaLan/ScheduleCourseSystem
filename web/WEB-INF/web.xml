@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <!-- SSH整合后web.xml配置 -->
+    <!-- web.xml文件中需要配置的信息有: -->
+    <!-- 1、防止乱码的过滤器 -->
+    <filter>
+        <filter-name>charset</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>charset</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>charset</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- 2.配置struts2过滤器 -->
+    <filter>
+        <filter-name>Struts2</filter-name>
+        <filter-class>
+            org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
+        </filter-class>
+        <!-- 指定action所在的package -->
+        <init-param>
+            <param-name>actionPackages</param-name>
+            <param-value>com.boke.ctl.struts2Action</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>Struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- 3.配置一个监听器将请求转发给 Spring框架 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!-- 4.配置一个参数，告诉容器，spring配置文件的位置 -->
+    <!--
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+    -->
+
+
+    <!-- 首页，欢迎页面 -->
+    <welcome-file-list>
+        <welcome-file>/login.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- 9、session登出时间 -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+</web-app>
