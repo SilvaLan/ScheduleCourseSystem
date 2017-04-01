@@ -2,6 +2,8 @@ package courseschesystem.dao;
 
 import courseschesystem.entity.User;
 
+import java.util.List;
+
 /**
  * @Author: zzh
  * @Description: User的DAO接口类
@@ -9,32 +11,8 @@ import courseschesystem.entity.User;
  * @Modified By:
  */
 public interface UserDAO {
-    /**
-     * @Author: zzh
-     * @Description:
-     * @Date: Created in ${TIME} ${DATE}
-     * @Modified By:
-     */
-    public boolean addUser(User user);
-
-    /**
-     *
-     * @param user
-     * @return
-     */
-    public boolean deleteUser(User user);
-
-    /**
-     *
-     * @param user
-     * @return
-     */
-    public boolean updateUser(User user);
-
-    /**
-     *
-     * @param user
-     * @return
-     */
-    public boolean queryUser(User user);
+    boolean addUser(User user);
+    boolean deleteUser(User user);
+    boolean updateUser(User user);
+    List<User> queryUser(User user);
 }
