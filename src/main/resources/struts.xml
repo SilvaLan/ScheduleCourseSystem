@@ -12,12 +12,14 @@
         -  其中，实体名首字母大写，方法名小写
         -  result根据method返回的字符串，跳转到相应的界面上
         -->
+        <!--
         <action name="User_login" class="java.courseschesystem.action.UserAction" method="login">
             <result name="login_success_student">/index.student.jsp</result>
             <result name="login_success_teacher">/index.teacher.jsp</result>
             <result name="login_success_manager">/index.manager.jsp</result>
             <result name="login_failure">/jsp/login.jsp</result>
         </action>
+        -->
     </package>
     <!-- Add packages here -->
 
