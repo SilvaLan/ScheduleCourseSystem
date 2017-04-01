@@ -1,7 +1,10 @@
 package courseschesystem.entity;
 
 /**
- * Created by zzh on 2017/3/29.
+ * @Author: zzh
+ * @Description:
+ * @Date: Created in 9:36 2017/4/1
+ * @Modified By:
  */
-public class ClassRoom {
+public class Classroom {
 }
