@@ -4,9 +4,15 @@ package courseschesystem.entity;
  * Created by zzh on 2017/3/29.
  */
 public class User {
-    String uid;
-    String upwd;
-    String utype;
+    private String uid;
+    private String upwd;
+    private String utype;
+
+    public User(String uid,String upwd,String utype){
+        this.uid = uid;
+        this.upwd = upwd;
+        this.utype = utype;
+    }
 
     public String getUid() {
         return uid;
