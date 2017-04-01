@@ -58,6 +58,8 @@ public class CourseAction extends SuperAction implements ModelDriven<List<Course
          * @Date: Created in 12:06 2017/4/1
          * @Modified By:
          */
+
+        return "";
     }
 
 }
