@@ -1,10 +1,18 @@
 package courseschesystem.dao;
 
+import courseschesystem.entity.Classroom;
+
+import java.util.List;
+
 /**
- * @Author: zzh
- * @Description:
- * @Date: Created in 16:58 2017/3/30
+ * @Author: Lily
+ * @Description: Classroom的接口类
+ * @Date: Created in 12"30 2017/4/1
  * @Modified By:
  */
 public interface ClassroomDAO {
+    boolean addClassroom(Classroom classroom);
+    boolean deleteClassroom(Classroom classroom);
+    boolean updateClassroom(Classroom classroom);
+    List<Classroom> queryClassroom(Classroom classroom);
 }
