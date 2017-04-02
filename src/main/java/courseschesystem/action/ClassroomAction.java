@@ -19,11 +19,10 @@ public class ClassroomAction extends SuperAction implements ModelDriven<List<Cla
         return this.classrooms;
     }
 
-    public String queryClassroom(String date){
+    public String queryClassroomByDate(){
         /**
          * @Author: zzh
-         * @Description: 输入为当前系统日期 date，查询当天教室使用情况
-         * @param date
+         * @Description: 查询时间为date的教室使用情况，通过 request.getParameter("date") 获取jsp页面的date
          * @output: return "queryClassroom_success" or "queryClassroom_failure"
          * @Date: Created in 12:15 2017/4/1
          * @Modified By:
