@@ -1,9 +1,22 @@
 package courseschesystem.action;
 
+import com.opensymphony.xwork2.ModelDriven;
+import courseschesystem.entity.Teacher;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by zzh on 2017/3/29.
  */
-public class TeacherAction {
+public class TeacherAction extends SuperAction implements ModelDriven<List<Teacher>> {
+
+    private static final long serialVersionUID = 1L;
+    private List<Teacher> teachers = new ArrayList<>();
+    @Override
+    public List<Teacher> getModel() {
+        return this.teachers;
+    }
 
     public String courseTimeCount(){
         /**

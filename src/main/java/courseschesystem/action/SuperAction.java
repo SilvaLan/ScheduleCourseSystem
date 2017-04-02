@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  * @Author: zzh
- * @Description:
+ * @Description: SuperAction类，所有实体的Action类均需要继承SuperAction类
  * @Date: Created in 9:45 2017/4/1
  * @Modified By:
  */
