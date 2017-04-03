@@ -41,4 +41,17 @@ public class CourseServiceImpl {
         return null;
     }
 
+    public List<Integer> getCourseTime(String times){
+        /**
+         * @Author: zzh
+         * @Description: 上课时间为String类型，将其存储到整型数组中
+         * @param times
+         * @output: 返回上课时间list
+         * @Date: Created in 16:25 2017/4/3
+         * @Modified By:
+         */
+
+        return null;
+    }
+
 }
