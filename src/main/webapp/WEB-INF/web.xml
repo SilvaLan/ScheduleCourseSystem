@@ -72,7 +72,7 @@
 
   <!-- 首页，欢迎页面 -->
   <welcome-file-list>
-    <welcome-file>/login.jsp</welcome-file>
+    <welcome-file>/jsp/login.jsp</welcome-file>
   </welcome-file-list>
 
   <!-- 9、session登出时间 -->
