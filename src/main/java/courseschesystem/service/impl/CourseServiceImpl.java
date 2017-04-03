@@ -23,7 +23,6 @@ public class CourseServiceImpl {
          * @Modified By:
          */
 
-
         return null;
     }
 
@@ -40,5 +39,17 @@ public class CourseServiceImpl {
 
         return null;
     }
+    public int getCoursNumByKey(String keyType,String key){
+        /**
+         * @Author: zzh
+         * @Description: 根据关键字，统计学生数量
+         * @param keyType 关键词类型 {course,major}
+         * @param key
+         * @output: 返回学生数量
+         * @Date: Created in 11:33 2017/4/2
+         * @Modified By:Hu
+         */
 
+        return 0;
+    }
 }
