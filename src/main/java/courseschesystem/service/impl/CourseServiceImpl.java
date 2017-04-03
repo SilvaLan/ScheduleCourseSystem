@@ -40,18 +40,17 @@ public class CourseServiceImpl {
 
         return null;
     }
-
-    public List<Integer> getCourseTime(String times){
+    public int getCoursNumByKey(String keyType,String key){
         /**
          * @Author: zzh
-         * @Description: 上课时间为String类型，将其存储到整型数组中
-         * @param times
-         * @output: 返回上课时间list
-         * @Date: Created in 16:25 2017/4/3
-         * @Modified By:
+         * @Description: 根据关键字，统计学生数量
+         * @param keyType 关键词类型 {course,major}
+         * @param key
+         * @output: 返回学生数量
+         * @Date: Created in 11:33 2017/4/2
+         * @Modified By:Hu
          */
 
-        return null;
+        return 0;
     }
-
 }

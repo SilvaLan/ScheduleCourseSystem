@@ -2,7 +2,9 @@ package courseschesystem.action;
 
 import com.opensymphony.xwork2.ModelDriven;
 import courseschesystem.entity.Teacher;
+import courseschesystem.service.impl.TeacherServiceImpl;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,8 +31,20 @@ public class TeacherAction extends SuperAction implements ModelDriven<List<Teach
          * @Date: Created in 2:09 2017/4/2
          * @Modified By:
          */
-
-        return "";
+        String tno_String = request.getParameter("tno");   //获取教师编号tno_String,类型String
+        if (tno_String!=null){
+            TeacherServiceImpl teacherService = new TeacherServiceImpl();       //获取TeacherServiceImpl实例
+            int totalTime = teacherService.courseTimeCount("total",tno_String);      //调用tCourseNumCount获取学生数量
+            if(totalTime >=0){                          //人数>=0
+                HttpSession session = request.getSession();
+                session.setAttribute("totalTime",totalTime);        //向jsp页面发送totalNum
+                return "courseTimeCount_success";
+            }else{
+                return "courseTimeCount_failure";      //totalNum<0，跳转到失败页面
+            }
+        }else {
+            return "courseTimeCount_failure";      //未成功获取tno_String，跳转到失败页面
+        }
     }
 
     public String courseNumCount(){
@@ -41,10 +55,22 @@ public class TeacherAction extends SuperAction implements ModelDriven<List<Teach
          *                通过 session.setAttribute("totalNum", totalNum) 给jsp页面返回总门数 totalNum
          * @output: return "courseNumCount_success" if succeed or return "courseNumCount_failure"
          * @Date: Created in 2:16 2017/4/2
-         * @Modified By:
+         * @Modified By:Hu
          */
-
-        return "";
+        String tno_String = request.getParameter("tno");   //获取教师编号tno_String,类型String
+        if (tno_String!=null){
+            TeacherServiceImpl teacherService = new TeacherServiceImpl();       //获取TeacherServiceImpl实例
+            int totalNum = teacherService.tCourseNumCount(tno_String);      //调用tCourseNumCount获取学生数量
+            if(totalNum >=0){                          //人数>=0
+                HttpSession session = request.getSession();
+                session.setAttribute("totalNum",totalNum);        //向jsp页面发送totalNum
+                return "courseNumCount_success";
+            }else{
+                return "courseNumCount_failure";      //totalNum<0，跳转到失败页面
+            }
+        }else {
+            return "courseNumCount_failure";      //未成功获取tno_String，跳转到失败页面
+        }
     }
 
 }
