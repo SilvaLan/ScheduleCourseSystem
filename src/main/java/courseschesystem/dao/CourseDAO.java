@@ -1,6 +1,8 @@
 package courseschesystem.dao;
 
 import courseschesystem.entity.Course;
+import courseschesystem.entity.Student;
+import courseschesystem.entity.Teacher;
 
 import java.util.List;
 
@@ -21,5 +23,8 @@ public interface CourseDAO {
     boolean deleteCourse(Course course);
     boolean updateCourse(Course course);
     List<Course> queryCourse(Course course);
-
+    List<Course> findByTeacher(Teacher teacher);
+    List<Course> findByStudent(Student student);
+    List<Course> findByMajor(String majorId);
+    String findCourseTimeByCourse(Course course);
 }

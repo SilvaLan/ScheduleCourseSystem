@@ -1,7 +1,10 @@
 package courseschesystem.service.impl;
 
+import courseschesystem.dao.ClassroomDAO;
+import courseschesystem.dao.impl.ClassroomDAOImpl;
 import courseschesystem.entity.Classroom;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -20,7 +23,12 @@ public class ClassroomServiceImpl {
          * @Modified By:
          */
 
-        return null;
+        List<Classroom> classrooms = new ArrayList<>();
+        ClassroomDAO classroomDao = new ClassroomDAOImpl();
+        classrooms = classroomDao.queryClassroomByDate(date);
+        if(classrooms != null)
+            return classrooms;
+        else return null;
     }
 
 }

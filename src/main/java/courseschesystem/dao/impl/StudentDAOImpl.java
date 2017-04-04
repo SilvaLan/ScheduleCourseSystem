@@ -1,6 +1,7 @@
 package courseschesystem.dao.impl;
 
 import courseschesystem.dao.StudentDAO;
+import courseschesystem.entity.Course;
 import courseschesystem.entity.Student;
 import db.MyHibernateSessionFactory;
 import org.hibernate.Session;
@@ -194,5 +195,29 @@ public class StudentDAOImpl implements StudentDAO {
             return students;
         else
             return null;
+    }
+
+    /**
+     * 查询某门课程的选课情况
+     * @param course 课程
+     * @return 选了该门课程的所有学生
+     */
+    public List<Student> findByCourse(Course course){
+        List<Student> students = new ArrayList<>();
+
+
+        return students;
+    }
+
+    /**
+     * 查询某专业的选课情况
+     * @param majorId 专业
+     * @return 选了该专业的所有学生
+     */
+    public List<Student> findByMajor(String majorId){
+        List<Student> students = new ArrayList<>();
+
+
+        return students;
     }
 }

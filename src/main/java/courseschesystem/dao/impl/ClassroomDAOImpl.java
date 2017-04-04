@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -149,5 +150,16 @@ public class ClassroomDAOImpl implements ClassroomDAO {
             return classrooms;
         else
             return null;
+    }
+
+    /**
+     * 查询某时间段教室的使用情况
+     * @param date 日期
+     * @return 返回该时间段内教室的使用情况
+     */
+    public List<Classroom> queryClassroomByDate(Date date){
+        List<Classroom> classrooms = new ArrayList<>();
+
+        return classrooms;
     }
 }
