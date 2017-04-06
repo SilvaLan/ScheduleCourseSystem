@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="courseschesystem.entity.Arrange" table="arrange" schema="manage_system">
+        <id name="arid" column="arid"/>
+        <property name="caid" column="caid"/>
+        <property name="actype" column="actype"/>
+        <property name="acweek" column="acweek"/>
+        <property name="acnum" column="acnum"/>
+    </class>
+</hibernate-mapping>

@@ -17,11 +17,8 @@ public class ActivityAction extends SuperAction implements ModelDriven<List<Acti
     private static final long serialVersionUID = 1L;
     private List<Activity> activities = new ArrayList<>();
     private HttpServletRequest request;
-
     @Override
     public List<Activity> getModel() {
         return this.activities;
     }
-
-
 }

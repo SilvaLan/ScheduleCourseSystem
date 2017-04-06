@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="courseschesystem.entity.Course" table="course" schema="manage_system">
+        <id name="courseid" column="courseid"/>
+        <property name="coursename" column="coursename"/>
+        <property name="credit" column="credit"/>
+        <property name="classhour" column="classhour"/>
+        <property name="examine" column="examine"/>
+        <property name="coursetype" column="coursetype"/>
+        <property name="rid" column="rid"/>
+        <property name="lnum" column="lnum"/>
+        <property name="cnum" column="cnum"/>
+        <property name="bweek" column="bweek"/>
+        <property name="eweek" column="eweek"/>
+        <property name="evaluate" column="evaluate"/>
+        <property name="coursetime" column="coursetime"/>
+    </class>
+</hibernate-mapping>

@@ -7,17 +7,19 @@
     <!--表明以下的配置是针对session-factory配置的，SessionFactory是Hibernate中的一个类，这个类主要负责保存HIbernate的配置信息，以及对Session的操作-->
     <session-factory>
         <!--配置数据库的驱动程序，Hibernate在连接数据库时，需要用到数据库的驱动程序-->
-        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver </property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <!--设置数据库的连接url:jdbc:mysql://localhost/manage_system,其中localhost表示mysql服务器名称，此处为本机，manage_system是数据库名-->
-        <property name="hibernate.connection.url">jdbc:mysql://localhost/manage_system</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/manage_system</property>
         <!--连接数据库是用户名-->
-        <property name="hibernate.connection.username">root</property>
         <!--连接数据库是密码-->
-         <property name="hibernate.connection.password"></property>
         <!--数据库连接池的大小-->
         <property name="hibernate.connection.pool.size">20 </property>
         <!--是否在后台显示Hibernate用到的SQL语句，开发时设置为true，便于差错，程序运行时可以在控制台显示Hibernate的执行Sql语句。项目部署后可以设置为false，提高运-->
         <property name="hibernate.show_sql">true </property>
+        <!---->
+        <property name="format_sql">true</property>
+        <!---->
+        <property name="hbm2ddl.auto">create</property>
         <!--jdbc.fetch_size是指Hibernate每次从数据库中取出并放到JDBC的Statement中的记录条数。Fetch Size设的越大，读数据库的次数越少，速度越快，Fetch Size越小，读数据库的次数越多，速度越慢-->
         <property name="jdbc.fetch_size">50 </property>
         <!--jdbc.batch_size是指Hibernate批量插入,删除和更新时每次操作的记录数。Batch Size越大，批量操作的向数据库发送Sql的次数越少，速度就越快，同样耗用内存就越大-->
@@ -33,7 +35,24 @@
         <property name="hibernate.current_session_context_class">thread</property>
 
         <!--指定映射文件为“User.hbm.xml”-->
-        <mapping resource="User.hbm.xml"/>
+        <mapping resource="courseschesystem/entity/User.hbm.xml"/>
+        <mapping class="courseschesystem.entity.Activity"/>
+        <mapping resource="courseschesystem/entity/Activity.hbm.xml"/>
+        <mapping class="courseschesystem.entity.Arrange"/>
+        <mapping resource="courseschesystem/entity/Arrange.hbm.xml"/>
+        <mapping class="courseschesystem.entity.Classroom"/>
+        <mapping resource="courseschesystem/entity/Classroom.hbm.xml"/>
+        <mapping class="courseschesystem.entity.Course"/>
+        <mapping resource="courseschesystem/entity/Course.hbm.xml"/>
+        <mapping class="courseschesystem.entity.Instruction"/>
+        <mapping resource="courseschesystem/entity/Instruction.hbm.xml"/>
+        <mapping class="courseschesystem.entity.Selection"/>
+        <mapping resource="courseschesystem/entity/Selection.hbm.xml"/>
+        <mapping class="courseschesystem.entity.Student"/>
+        <mapping resource="courseschesystem/entity/Student.hbm.xml"/>
+        <mapping class="courseschesystem.entity.Teacher"/>
+        <mapping resource="courseschesystem/entity/Teacher.hbm.xml"/>
+        <mapping class="courseschesystem.entity.User"/>
         <!-- 以及其他mapping映射文件 -->
     </session-factory>
 </hibernate-configuration>
