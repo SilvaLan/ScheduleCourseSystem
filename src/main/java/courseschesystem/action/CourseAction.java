@@ -2,6 +2,7 @@ package courseschesystem.action;
 
 import com.opensymphony.xwork2.ModelDriven;
 import courseschesystem.entity.Course;
+import courseschesystem.service.CourseService;
 import courseschesystem.service.impl.CourseServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
@@ -25,7 +26,7 @@ public class CourseAction extends SuperAction implements ModelDriven<List<Course
     public List<Course> getModel() {
         return this.courses;
     }
-    private List<List<Course>> list_list_Course;
+    private Course[][] list_list_Course;
     public String queryMajorSchedule(){
         /**
          * @Author: zzh
@@ -36,7 +37,7 @@ public class CourseAction extends SuperAction implements ModelDriven<List<Course
          */
         String majorid_String = request.getParameter("majorid");   //获取专业号majorid_String,类型String
         if (majorid_String != null) {
-            CourseServiceImpl courseService = new CourseServiceImpl();  //获取CourseServiceImpl实例
+            CourseService courseService = new CourseServiceImpl(); //获取CommonServiceImpl实例
             courses = courseService.queryScheduleByKey("majorid",majorid_String);       //调用queryScheduleByKey获取教室信息并存储在courses中
             list_list_Course = courseService.listToMatrix(courses);         //将课程表从线性list转换为二维矩阵存储
             if (list_list_Course != null) {
@@ -61,7 +62,7 @@ public class CourseAction extends SuperAction implements ModelDriven<List<Course
          */
         String stuID_String = request.getParameter("stuid");   //获取学号stuID_String,类型String
         if (stuID_String != null) {
-            CourseServiceImpl courseService = new CourseServiceImpl();  //获取CourseServiceImpl实例
+            CourseService courseService = new CourseServiceImpl();  //获取CourseServiceImpl实例
             courses = courseService.queryScheduleByKey("stuid",stuID_String);       //调用queryScheduleByKey获取教室信息并存储在courses中
             list_list_Course = courseService.listToMatrix(courses);         //将课程表从线性list转换为二维矩阵存储
             if (list_list_Course != null) {
@@ -89,7 +90,7 @@ public class CourseAction extends SuperAction implements ModelDriven<List<Course
          */
         String tID_String = request.getParameter("tID");   //获取教师编号tID_String,类型String
         if (tID_String != null) {
-            CourseServiceImpl courseService = new CourseServiceImpl();  //获取CourseServiceImpl实例
+            CourseService courseService = new CourseServiceImpl();  //获取CourseServiceImpl实例
             courses = courseService.queryScheduleByKey("tid",tID_String);       //调用queryScheduleByKey获取教室信息并存储在courses中
             list_list_Course = courseService.listToMatrix(courses);         //将课程表从线性list转换为二维矩阵存储
             if (list_list_Course != null) {

@@ -2,7 +2,6 @@ package courseschesystem.action;
 
 import com.opensymphony.xwork2.ModelDriven;
 import courseschesystem.entity.Student;
-import courseschesystem.service.impl.CourseServiceImpl;
 import courseschesystem.service.impl.StudentServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
@@ -53,7 +52,7 @@ public class StudentAction extends SuperAction implements ModelDriven<List<Stude
     public String getStudentNumByCourse(){
         /**
          * @Author: zzh
-         * @Description: 根据课程号cno，统计上某门课的学生总数，
+         * @Description: 根据课程号cno，统计上某门课的学生总数
          *                通过 request.getParameter("cno") 获取jsp页面的cno
          *                通过 session.setAttribute("stuNumByCourse", stuNumByCourse) 给jsp页面返回学生数 stuNumByCourse
          * @output: return "getStudentNumByCourse_success" if count success, or return "getStudentNumByCourse_success"
@@ -79,33 +78,34 @@ public class StudentAction extends SuperAction implements ModelDriven<List<Stude
     public String stuCourseNumCount(){
         /**
          * @Author: zzh
-         * @Description: 根据学号stuno，统计某学生每周的课程数，
+         * @Description: 根据学号stuno，统计某学生每周的课程数
          *                通过 request.getParameter("tno") 获取jsp页面的tno
          *                通过 session.setAttribute("stuCourseNum", stuCourseNum) 给jsp页面返回学生数 stuCourseNum
          * @output: return "stuCourseNumCount_success" if count success, or return "stuCourseNumCount_success"
          * @Date: Created in 12:10 2017/4/2
          * @Modified By:Hu
          */
-        String stuno_String = request.getParameter("stutno");   //获取专业号cno_String,类型String
-        if (stuno_String!=null){
-            CourseServiceImpl courseService = new CourseServiceImpl();       //获取CourseServiceImpl实例
-            int CourseNumByTno = courseService.getCoursNumByKey("CourseNum",stuno_String);      //调用getCoursNumByKey获取学生数量
-            if(CourseNumByTno >=0){                          //课程数>=0
-                HttpSession session = request.getSession();
-                session.setAttribute("CourseNumByTno",CourseNumByTno);        //向jsp页面发送CourseNumByTno
-                return "getCourseNumByTno_success";
-            }else{
-                return "getCourseNumByTno_failure";      //CourseNumByTno<0，跳转到失败页面
-            }
-        }else {
-            return "getCourseNumByTno_failure";      //未成功获取stuno_String，跳转到失败页面
-        }
+        //String stuno_String = request.getParameter("stutno");   //获取专业号cno_String,类型String
+        //if (stuno_String!=null){
+        //    CourseServiceImpl courseService = new CourseServiceImpl();       //获取CourseServiceImpl实例
+        //    int CourseNumByTno = courseService.getCoursNumByKey("CourseNum",stuno_String);      //调用getCourseNumByKey获取学生数量
+        //    if(CourseNumByTno >=0){                          //课程数>=0
+        //        HttpSession session = request.getSession();
+        //        session.setAttribute("CourseNumByTno",CourseNumByTno);        //向jsp页面发送CourseNumByTno
+        //        return "getCourseNumByTno_success";
+        //    }else{
+        //        return "getCourseNumByTno_failure";      //CourseNumByTno<0，跳转到失败页面
+        //    }
+        // }else {
+        //    return "getCourseNumByTno_failure";      //未成功获取stuno_String，跳转到失败页面
+        // }
+        return "";
     }
 
     public String stuCourseTimeCount(){
         /**
          * @Author: zzh
-         * @Description: 根据学号tno，统计某学生每周的上课时长，
+         * @Description: 根据学号tno，统计某学生每周的上课时长
          *                通过 request.getParameter("tno") 获取jsp页面的tno
          *                通过 session.setAttribute("stuCourseTime", stuCourseTime) 给jsp页面返回学生数 stuCourseTime
          * @output: return "stuCourseTimeCount_success" if count success, or return "stuCourseTimeCount_success"

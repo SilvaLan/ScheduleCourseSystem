@@ -7,13 +7,13 @@ import java.util.List;
 /**
  * @Author: zzh
  * @Description:
- * @Date: Created in 2:20 2017/4/2
+ * @Date: Created in 20:05 2017/4/5
  * @Modified By:
  */
 public interface CourseService {
 
-    //根据关键词类型和关键词内容，查询相应的课表，存储在List中
+    // 根据关键字，对课程表进行查询
     List<Course> queryScheduleByKey(String keyType, String key);
-    //将一维表转化为二维形式
-    List<List<Course>> listToMatrix(List<Course> courses);
+    // 将课程表从线性list转换为二维矩阵存储
+    Course[][] listToMatrix(List<Course> courses);
 }

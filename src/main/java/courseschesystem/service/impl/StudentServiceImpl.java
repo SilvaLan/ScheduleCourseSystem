@@ -3,9 +3,11 @@ package courseschesystem.service.impl;
 import courseschesystem.dao.StudentDAO;
 import courseschesystem.dao.impl.StudentDAOImpl;
 import courseschesystem.entity.Course;
-
 /**
- * Created by zzh on 2017/3/29.
+ * @Author: zzh
+ * @Description: 面向学生用户的 相关业务方法
+ * @Date: Created in 19:32 2017/4/5
+ * @Modified By:
  */
 public class StudentServiceImpl {
 
@@ -35,8 +37,5 @@ public class StudentServiceImpl {
         }
         else return -1;
     }
-
-
-
 
 }

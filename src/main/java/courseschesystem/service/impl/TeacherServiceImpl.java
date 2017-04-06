@@ -9,7 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by zzh on 2017/3/29.
+ * @Author: zzh
+ * @Description: 面向教师用户的 相关业务方法
+ * @Date: Created in 19:32 2017/4/5
+ * @Modified By:
  */
 public class TeacherServiceImpl {
 

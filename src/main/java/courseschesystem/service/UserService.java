@@ -3,7 +3,10 @@ package courseschesystem.service;
 import courseschesystem.entity.User;
 
 /**
- * Created by zzh on 2017/3/29.
+ * @Author: zzh
+ * @Description:
+ * @Date: Created in 19:32 2017/4/5
+ * @Modified By:
  */
 public interface UserService {
 

@@ -2,7 +2,8 @@ package courseschesystem.action;
 
 import com.opensymphony.xwork2.ModelDriven;
 import courseschesystem.entity.Classroom;
-import courseschesystem.service.impl.ClassroomServiceImpl;
+import courseschesystem.service.AdminService;
+import courseschesystem.service.impl.AdminServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -10,9 +11,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by zzh on 2017/3/29.
- */
+
 public class ClassroomAction extends SuperAction implements ModelDriven<List<Classroom>>{
 
     private static final long serialVersionUID = 1L;
@@ -35,8 +34,8 @@ public class ClassroomAction extends SuperAction implements ModelDriven<List<Cla
         String roomData_String = request.getParameter("data");   //获取时间data,类型String
         if (roomData_String != null) {
             Date roomData_Date = new Date(roomData_String);
-            ClassroomServiceImpl classroomService = new ClassroomServiceImpl();  //获取ClassroomServiceImpl实例
-            classrooms = classroomService.queryClassroomByDate(roomData_Date);       //调用queryClassroomByDate获取教室信息并存储在classrooms中
+            AdminService adminService = new AdminServiceImpl();  //获取AdminServiceImpl实例
+            classrooms = adminService.queryClassroomByDate(roomData_Date);       //调用queryClassroomByDate获取教室信息并存储在classrooms中
             if (classrooms != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("List_ClassRoom", classrooms);              //向jsp页面发送classrooms

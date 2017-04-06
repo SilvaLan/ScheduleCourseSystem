@@ -185,12 +185,15 @@ public class CourseDAOImpl implements CourseDAO{
             return null;
     }
 
-    /**
-     * 查询某个教师的授课表
-     * @param teacher 教师
-     * @return 该教师的授课表
-     */
     public List<Course> findByTeacher(Teacher teacher){
+        /**
+         * @Author:
+         * @Description: 根据教师编号tid，在course表中查询，得到某个教师的授课表
+         * @param teacher 教师
+         * @output: 该教师的授课表
+         * @Date: Created in 13:16 2017/4/5
+         * @Modified By:
+         */
         List<Course> courses = new ArrayList<>();
         return courses;
     }
@@ -216,7 +219,7 @@ public class CourseDAOImpl implements CourseDAO{
     }
 
     /**
-     * 查询某门课程的上课时间
+     * 根据课程号cno，查询某门课程的上课时间
      * @param course 课程
      * @return 该门课程的上课时间
      */

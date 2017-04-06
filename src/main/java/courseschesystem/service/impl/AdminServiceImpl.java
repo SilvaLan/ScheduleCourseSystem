@@ -3,19 +3,23 @@ package courseschesystem.service.impl;
 import courseschesystem.dao.ClassroomDAO;
 import courseschesystem.dao.impl.ClassroomDAOImpl;
 import courseschesystem.entity.Classroom;
+import courseschesystem.service.AdminService;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 /**
- * Created by zzh on 2017/3/29.
+ * @Author: zzh
+ * @Description: 面向教务系统管理员的 相关业务方法
+ * @Date: Created in 19:32 2017/4/5
+ * @Modified By:
  */
-public class ClassroomServiceImpl {
+public class AdminServiceImpl implements AdminService{
 
     public List<Classroom> queryClassroomByDate(Date date){
         /**
-         * @Author: zzh
+         * @Author: Yang
          * @Description: 根据日期查询教室使用情况
          * @param date 日期
          * @output: 返回教室使用信息，存储在List中
@@ -30,5 +34,4 @@ public class ClassroomServiceImpl {
             return classrooms;
         else return null;
     }
-
 }

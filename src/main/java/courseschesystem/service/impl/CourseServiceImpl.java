@@ -5,6 +5,7 @@ import courseschesystem.dao.impl.CourseDAOImpl;
 import courseschesystem.entity.Course;
 import courseschesystem.entity.Student;
 import courseschesystem.entity.Teacher;
+import courseschesystem.service.CourseService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,12 +13,12 @@ import java.util.List;
 /**
  * @Author: zzh
  * @Description:
- * @Date: Created in 2:21 2017/4/2
+ * @Date: Created in 20:06 2017/4/5
  * @Modified By:
  */
-public class CourseServiceImpl {
+public class CourseServiceImpl implements CourseService{
 
-    public List<Course> queryScheduleByKey(String keyType,String key){
+    public List<Course> queryScheduleByKey(String keyType, String key){
         /**
          * @Author: Yang
          * @Description: 根据关键字，对课程表进行查询
@@ -80,4 +81,5 @@ public class CourseServiceImpl {
         }
         return CourseMatrix;
     }
+
 }
