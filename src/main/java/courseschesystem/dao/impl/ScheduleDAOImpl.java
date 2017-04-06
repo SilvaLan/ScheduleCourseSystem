@@ -1,7 +1,7 @@
 package courseschesystem.dao.impl;
 
 import courseschesystem.dao.ScheduleDAO;
-import courseschesystem.entity.Schedule;
+import courseschesystem.common.Schedule;
 
 import java.util.List;
 

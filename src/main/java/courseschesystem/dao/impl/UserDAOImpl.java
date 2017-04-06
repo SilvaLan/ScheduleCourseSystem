@@ -2,7 +2,6 @@
 package courseschesystem.dao.impl;
 
 import courseschesystem.dao.UserDAO;
-import courseschesystem.entity.User;
 import db.MyHibernateSessionFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

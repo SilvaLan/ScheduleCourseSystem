@@ -6,7 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * Created by Lily on 2017/3/31.
+ * @Author: zzh
+ * @Description:
+ * @Date: Created in 20:12 2017/4/6
+ * @Modified By:
  */
 @Entity
 public class Classroom {

@@ -1,7 +1,6 @@
 package courseschesystem.action;
 
 import com.opensymphony.xwork2.ModelDriven;
-import courseschesystem.entity.Classroom;
 import courseschesystem.service.AdminService;
 import courseschesystem.service.impl.AdminServiceImpl;
 

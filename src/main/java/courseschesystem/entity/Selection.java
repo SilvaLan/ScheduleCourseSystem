@@ -3,30 +3,17 @@ package courseschesystem.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
 
 /**
  * @Author: zzh
  * @Description:
- * @Date: Created in 11:04 2017/4/3
+ * @Date: Created in 20:12 2017/4/6
  * @Modified By:
  */
 @Entity
-@IdClass(SelectionPK.class)
 public class Selection {
-
     private String stuid;
     private String courseid;
-
-    @Id
-    @Column(name = "courseid")
-    public String getCourseid() {
-        return courseid;
-    }
-
-    public void setCourseid(String courseid) {
-        this.courseid = courseid;
-    }
 
     @Id
     @Column(name = "stuid")
@@ -36,6 +23,16 @@ public class Selection {
 
     public void setStuid(String stuid) {
         this.stuid = stuid;
+    }
+
+    @Id
+    @Column(name = "courseid")
+    public String getCourseid() {
+        return courseid;
+    }
+
+    public void setCourseid(String courseid) {
+        this.courseid = courseid;
     }
 
     @Override

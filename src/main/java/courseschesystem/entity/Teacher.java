@@ -4,24 +4,62 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.Date;
+import java.sql.Date;
 
 /**
- * Created by Lily on 2017/3/31.
+ * @Author: zzh
+ * @Description:
+ * @Date: Created in 20:12 2017/4/6
+ * @Modified By:
  */
 @Entity
 public class Teacher {
     private String tid;
     private String tname;
-    private String  tsex;
+    private String tsex;
     private Date tbirth;
     private String tIDnum;
     private String trace;
     private Date tindate;
-    private String aid;
     private String mail;
 
-    public void setTbirth(java.sql.Date tbirth) {
+    @Id
+    @Column(name = "tid")
+    public String getTid() {
+        return tid;
+    }
+
+    public void setTid(String tid) {
+        this.tid = tid;
+    }
+
+    @Basic
+    @Column(name = "tname")
+    public String getTname() {
+        return tname;
+    }
+
+    public void setTname(String tname) {
+        this.tname = tname;
+    }
+
+    @Basic
+    @Column(name = "tsex")
+    public String getTsex() {
+        return tsex;
+    }
+
+    public void setTsex(String tsex) {
+        this.tsex = tsex;
+    }
+
+    @Basic
+    @Column(name = "tbirth")
+    public Date getTbirth() {
+        return tbirth;
+    }
+
+    public void setTbirth(Date tbirth) {
         this.tbirth = tbirth;
     }
 
@@ -35,58 +73,12 @@ public class Teacher {
         this.tIDnum = tIDnum;
     }
 
-    public void setTindate(java.sql.Date tindate) {
-        this.tindate = tindate;
-    }
-
-    @Id
-    @Column(name = "tid")
-    public String getTid() {
-        return tid;
-    }
-    public void setTid(String tid) {
-        this.tid = tid;
-    }
-
-    @Basic
-    @Column(name = "tname")
-    public String getTname() {
-        return tname;
-    }
-    public void setTname(String tname) {
-        this.tname = tname;
-    }
-
-    @Basic
-    @Column(name = "tsex")
-    public String getTsex() {
-        return tsex;
-    }
-    public void setTsex(String tsex) {
-        this.tsex = tsex;
-    }
-
-    @Basic
-    @Column(name = "tbirth")
-    public Date getTbirth() {
-        return tbirth;
-    }
-    public void setTbirth(Date tbirth) {
-        this.tbirth = tbirth;
-    }
-
-    public String gettIDnun() {
-        return tIDnum;
-    }
-    public void settIDnun(String tIDnun) {
-        this.tIDnum = tIDnun;
-    }
-
     @Basic
     @Column(name = "trace")
     public String getTrace() {
         return trace;
     }
+
     public void setTrace(String trace) {
         this.trace = trace;
     }
@@ -96,15 +88,9 @@ public class Teacher {
     public Date getTindate() {
         return tindate;
     }
+
     public void setTindate(Date tindate) {
         this.tindate = tindate;
-    }
-
-    public String getAid() {
-        return aid;
-    }
-    public void setAid(String aid) {
-        this.aid = aid;
     }
 
     @Basic
@@ -112,6 +98,7 @@ public class Teacher {
     public String getMail() {
         return mail;
     }
+
     public void setMail(String mail) {
         this.mail = mail;
     }

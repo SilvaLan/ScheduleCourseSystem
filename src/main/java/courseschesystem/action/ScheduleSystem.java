@@ -1,7 +1,7 @@
 package courseschesystem.action;
 
 import com.opensymphony.xwork2.ModelDriven;
-import courseschesystem.entity.Schedule;
+import courseschesystem.common.Schedule;
 import courseschesystem.service.ScheduleService;
 import courseschesystem.service.impl.ScheduleServiceImpl;
 

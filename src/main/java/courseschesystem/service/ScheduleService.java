@@ -1,6 +1,6 @@
 package courseschesystem.service;
 
-import courseschesystem.entity.Schedule;
+import courseschesystem.common.Schedule;
 
 import java.util.List;
 

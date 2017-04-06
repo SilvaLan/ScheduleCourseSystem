@@ -1,7 +1,6 @@
 package courseschesystem.action;
 
 import com.opensymphony.xwork2.ModelDriven;
-import courseschesystem.entity.User;
 import courseschesystem.service.UserService;
 import courseschesystem.service.impl.UserServiceImpl;
 

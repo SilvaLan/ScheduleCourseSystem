@@ -1,7 +1,6 @@
 package courseschesystem.dao.impl;
 
 import courseschesystem.dao.ActivityDAO;
-import courseschesystem.entity.Activity;
 
 import java.util.List;
 

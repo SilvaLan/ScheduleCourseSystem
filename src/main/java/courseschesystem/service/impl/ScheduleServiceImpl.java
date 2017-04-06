@@ -2,7 +2,7 @@ package courseschesystem.service.impl;
 
 import courseschesystem.dao.ScheduleDAO;
 import courseschesystem.dao.impl.ScheduleDAOImpl;
-import courseschesystem.entity.Schedule;
+import courseschesystem.common.Schedule;
 import courseschesystem.service.ScheduleService;
 
 import java.util.ArrayList;

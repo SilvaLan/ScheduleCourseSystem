@@ -1,7 +1,5 @@
 package courseschesystem.dao;
 
-import courseschesystem.entity.Teacher;
-
 import java.util.List;
 
 /**

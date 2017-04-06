@@ -8,16 +8,12 @@ import javax.persistence.Id;
 /**
  * @Author: zzh
  * @Description:
- * @Date: Created in 14:39 2017/4/6
+ * @Date: Created in 20:12 2017/4/6
  * @Modified By:
  */
 @Entity
 public class Instruction {
-
     private String insid;
-    private String courseid;
-    private String tid;
-    private String rid;
     private int instime;
 
     @Id
@@ -28,30 +24,6 @@ public class Instruction {
 
     public void setInsid(String insid) {
         this.insid = insid;
-    }
-
-    public String getCourseid() {
-        return courseid;
-    }
-
-    public void setCourseid(String courseid) {
-        this.courseid = courseid;
-    }
-
-    public String getTid() {
-        return tid;
-    }
-
-    public void setTid(String tid) {
-        this.tid = tid;
-    }
-
-    public String getRid() {
-        return rid;
-    }
-
-    public void setRid(String rid) {
-        this.rid = rid;
     }
 
     @Basic

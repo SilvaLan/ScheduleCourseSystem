@@ -1,7 +1,6 @@
 package courseschesystem.dao.impl;
 
 import courseschesystem.dao.ClassroomDAO;
-import courseschesystem.entity.Classroom;
 import db.MyHibernateSessionFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

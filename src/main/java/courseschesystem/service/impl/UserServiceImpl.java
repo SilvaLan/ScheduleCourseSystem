@@ -2,7 +2,6 @@ package courseschesystem.service.impl;
 
 import courseschesystem.dao.UserDAO;
 import courseschesystem.dao.impl.UserDAOImpl;
-import courseschesystem.entity.User;
 import courseschesystem.service.UserService;
 
 import java.util.List;

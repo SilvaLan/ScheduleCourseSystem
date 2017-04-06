@@ -4,10 +4,13 @@ import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.Date;
+import java.sql.Date;
 
 /**
- * Created by Lily on 2017/3/31.
+ * @Author: zzh
+ * @Description:
+ * @Date: Created in 20:12 2017/4/6
+ * @Modified By:
  */
 @Entity
 public class Student {
@@ -18,25 +21,15 @@ public class Student {
     private String stuIDnum;
     private String sturace;
     private Date stuindate;
-    private String classid;
-    private String majorid;
-    private String aid;
     private String mail;
     private String edu;
-
-    public void setStubirth(java.sql.Date stubirth) {
-        this.stubirth = stubirth;
-    }
-
-    public void setStuindate(java.sql.Date stuindate) {
-        this.stuindate = stuindate;
-    }
 
     @Id
     @Column(name = "stuid")
     public String getStuid() {
         return stuid;
     }
+
     public void setStuid(String stuid) {
         this.stuid = stuid;
     }
@@ -99,30 +92,6 @@ public class Student {
 
     public void setStuindate(Date stuindate) {
         this.stuindate = stuindate;
-    }
-
-    public String getClassid() {
-        return classid;
-    }
-
-    public void setClassid(String classid) {
-        this.classid = classid;
-    }
-
-    public String getMajorid() {
-        return majorid;
-    }
-
-    public void setMajorid(String majorid) {
-        this.majorid = majorid;
-    }
-
-    public String getAid() {
-        return aid;
-    }
-
-    public void setAid(String aid) {
-        this.aid = aid;
     }
 
     @Basic

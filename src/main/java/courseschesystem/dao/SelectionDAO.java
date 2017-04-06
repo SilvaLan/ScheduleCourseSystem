@@ -1,9 +1,5 @@
 package courseschesystem.dao;
 
-import courseschesystem.entity.Course;
-import courseschesystem.entity.Selection;
-import courseschesystem.entity.Student;
-
 import java.util.List;
 
 /**

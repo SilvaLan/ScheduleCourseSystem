@@ -2,7 +2,6 @@ package courseschesystem.service.impl;
 
 import courseschesystem.dao.ArrangeDAO;
 import courseschesystem.dao.impl.ArrangeDAOImpl;
-import courseschesystem.entity.Arrange;
 import courseschesystem.service.ArrangeService;
 
 /**

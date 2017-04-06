@@ -1,7 +1,5 @@
 package courseschesystem.service;
 
-import courseschesystem.entity.User;
-
 /**
  * @Author: zzh
  * @Description:

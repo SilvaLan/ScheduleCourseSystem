@@ -1,7 +1,6 @@
 package courseschesystem.action;
 
 import com.opensymphony.xwork2.ModelDriven;
-import courseschesystem.entity.Activity;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;

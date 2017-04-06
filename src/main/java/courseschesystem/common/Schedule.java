@@ -1,4 +1,4 @@
-package courseschesystem.entity;
+package courseschesystem.common;
 
 /**
  * @Author: zzh

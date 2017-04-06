@@ -1,8 +1,6 @@
 package courseschesystem.dao;
 
 
-import courseschesystem.entity.Instruction;
-
 import java.util.List;
 
 /**

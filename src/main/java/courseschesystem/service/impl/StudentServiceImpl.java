@@ -2,7 +2,7 @@ package courseschesystem.service.impl;
 
 import courseschesystem.dao.StudentDAO;
 import courseschesystem.dao.impl.StudentDAOImpl;
-import courseschesystem.entity.Course;
+
 /**
  * @Author: zzh
  * @Description: 面向学生用户的 相关业务方法
