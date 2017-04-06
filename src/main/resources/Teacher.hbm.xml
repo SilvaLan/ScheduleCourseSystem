@@ -3,7 +3,18 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
+    <class name="courseschesystem.entity.Teacher" table="teacher">
 
+        <id name="tid" type="java.lang.String" length="10">
+            <generator class="assigned" />
+        </id>
+        <property name="tname" type="java.lang.String"/>
+        <property name="tsex" type="java.lang.String" />
+        <property name="tbirth" type="java.util.Date"/>
+        <property name="tIDnum" type="java.lang.String" length="18"/>
+        <property name="tsex" type="java.lang.String" />
+        <property name="tbirth" type="java.lang.String"/>
+    </class>
 
 
 </hibernate-mapping>

@@ -10,7 +10,7 @@ public class Teacher {
     private String tname;
     private String  tsex;
     private Date tbirth;
-    private String tIDnun;
+    private String tIDnum;
     private String trace;
     private Date tindate;
     private String aid;
@@ -45,10 +45,10 @@ public class Teacher {
     }
 
     public String gettIDnun() {
-        return tIDnun;
+        return tIDnum;
     }
     public void settIDnun(String tIDnun) {
-        this.tIDnun = tIDnun;
+        this.tIDnum = tIDnun;
     }
 
     public String getTrace() {

@@ -1,8 +1,6 @@
 package courseschesystem.dao;
 
 import courseschesystem.entity.Course;
-import courseschesystem.entity.Student;
-import courseschesystem.entity.Teacher;
 
 import java.util.List;
 
@@ -15,7 +13,7 @@ import java.util.List;
 public interface CourseDAO {
     /**
      * @Author: Lily
-     * @Description:Course的接口类
+     * @Description: Course的接口类
      * @Date: Created in 11:53 2017/4/1
      * @Modified By:
      */
@@ -23,8 +21,7 @@ public interface CourseDAO {
     boolean deleteCourse(Course course);
     boolean updateCourse(Course course);
     List<Course> queryCourse(Course course);
-    List<Course> findByTeacher(Teacher teacher);
-    List<Course> findByStudent(Student student);
-    List<Course> findByMajor(String majorId);
-    String findCourseTimeByCourse(Course course);
+
+    int[] queryCourseweek(String courseid);
+    String findCourseTimeByCourseid(String courseid);
 }

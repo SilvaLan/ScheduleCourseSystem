@@ -22,6 +22,9 @@ public interface StudentDAO {
     boolean deleteStudent(Student student);
     boolean updateStudent(Student student);
     List<Student> queryStudent(Student student);
+
+    List<Course> queryCourseByStudent(Student student);
+
     List<Student> findByCourse(Course course);
     List<Student> findByMajor(String majorId);
 }

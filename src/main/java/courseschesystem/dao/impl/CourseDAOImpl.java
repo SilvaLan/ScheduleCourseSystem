@@ -3,7 +3,6 @@ package courseschesystem.dao.impl;
 import courseschesystem.dao.CourseDAO;
 import courseschesystem.entity.Course;
 import courseschesystem.entity.Student;
-import courseschesystem.entity.Teacher;
 import db.MyHibernateSessionFactory;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -185,22 +184,11 @@ public class CourseDAOImpl implements CourseDAO{
             return null;
     }
 
-    public List<Course> findByTeacher(Teacher teacher){
-        /**
-         * @Author:
-         * @Description: 根据教师编号tid，在course表中查询，得到某个教师的授课表
-         * @param teacher 教师
-         * @output: 该教师的授课表
-         * @Date: Created in 13:16 2017/4/5
-         * @Modified By:
-         */
-        List<Course> courses = new ArrayList<>();
-        return courses;
-    }
+
 
     /**
      * 查询某个学生的课表
-     * @param student 学生
+     * @param student 根据教师编号tid，在instruction表和course表中查询，得到某个教师的授课表
      * @return 该学生的课表
      */
     public List<Course> findByStudent(Student student){
@@ -208,23 +196,27 @@ public class CourseDAOImpl implements CourseDAO{
         return courses;
     }
 
-    /**
-     * 查询某个专业的推荐课表
-     * @param majorId 专业编号
-     * @return 该专业的推荐课表
-     */
-    public List<Course> findByMajor(String majorId){
-        List<Course> courses = new ArrayList<>();
-        return courses;
-    }
 
     /**
      * 根据课程号cno，查询某门课程的上课时间
-     * @param course 课程
+     * @param courseid 课程
      * @return 该门课程的上课时间
      */
-    public String findCourseTimeByCourse(Course course){
+    public String findCourseTimeByCourseid(String courseid){
         String CourseTime=null;
         return CourseTime;
+    }
+
+    public int[] queryCourseweek(String courseid){
+        /**
+         * @Author: zzh
+         * @Description: new一个长度为2的数组，第一个元素存放起始周，第二个元素存放结束周
+         * @param courseid
+         * @output: 上课起始周和结束周的数组
+         * @Date: Created in 19:28 2017/4/6
+         * @Modified By:
+         */
+
+        return null;
     }
 }

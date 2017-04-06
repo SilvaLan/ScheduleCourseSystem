@@ -1,9 +1,8 @@
 package courseschesystem.service.impl;
 
-import courseschesystem.dao.CourseDAO;
-import courseschesystem.dao.impl.CourseDAOImpl;
-import courseschesystem.entity.Course;
-import courseschesystem.entity.Teacher;
+import courseschesystem.dao.InstructionDAO;
+import courseschesystem.dao.impl.InstructionDAOImpl;
+import courseschesystem.entity.Instruction;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,103 +15,50 @@ import java.util.List;
  */
 public class TeacherServiceImpl {
 
-    public int courseTimeCount(String time, String tno) {
+    public int[] teachTimeCount(String tid){
         /**
          * @Author: zzh
-         * @Description: 按time统计教师一个周总的，或者某一天的上课时长
+         * @Description: 统计教师的授课时长
          * @param time {total，monTime，tuseTime，wedsTime，hursTime，FriTime，saturTime，sunTime}
-         * @param tno 教师编号
-         * @output: 返回时长总和
+         * @param tid 教师编号
+         * @output: 返回教师授课时长，其中teachtime[0]表示一周授课总时长，teachtime[i]分别表示星期i的授课时长
          * @Date: Created in 12:04 2017/4/2
-         * @Modified By:
+         * @Modified By: zzh
          */
-        int totalClassLength = 0;    //统计教师上课总时长
+        int teachTime[] = {0};    //统计教师上课总时长
         int t1 = 0; int t2 = 0; int t3 = 0; int t4 = 0; int t5 = 0;//分别记录周一至周五每天的上课时长
-        CourseDAO courseDAO = new CourseDAOImpl();
-        List<Course> courses = new ArrayList<>();
-        Teacher teacher = new Teacher();
-        teacher.setAid(tno);
-        courses = courseDAO.findByTeacher(teacher);//获得该老师一周内的上课情况
+        InstructionDAO instructionDAO = new InstructionDAOImpl();
+        Instruction instruction = new Instruction();
+        List<Instruction> instructions = new ArrayList<>();
 
-        //遍历Course的List集合，计算每门课每天的上课时长并累加得到老师一天上课的总时长
-        for (Course course : courses) {
-            String courseTime = courseDAO.findCourseTimeByCourse(course);
-            String[] courseTimeArray = courseTime.split(",");    //将类似“11，12,13”字符串表示的时间分割数字存到该数组内
-            for(int i = 0; i < courseTimeArray.length; i++){
-                int t = (Integer.parseInt(courseTimeArray[i])-1) / 10 ;    //t表示这门课程在周几上
-                switch(t) {
-                    case 0 : {
-                        t1 += 1;
-                        break;
-                    }
-                    case 1 : {
-                        t2 += 1;
-                        break;
-                    }
-                    case 2 : {
-                        t3 += 1;
-                        break;
-                    }
-                    case 3 : {
-                        t4 += 1;
-                        break;
-                    }
-                    case 4 : {
-                        t5 += 1;
-                        break;
-                    }
-                    default : break;
-                }
-            }
+        instruction.setTid(tid);
+        instructions = instructionDAO.queryInstruction(instruction);//获得该老师一周内的上课情况
+
+        teachTime[0] = instructions.size();
+        //遍历Instruction的List集合，计算每门课每天的上课时长并累加得到老师一天上课的总时长
+        for (Instruction ins : instructions) {
+            teachTime[ins.getInstime()/10]++;
         }
-        //根据time不同的值为totalClassLength变量附上相应的值
-        switch (time){
-            case("mon") : {
-                totalClassLength = t1;
-                break;
-            }
-            case("tues") : {
-                totalClassLength = t2;
-                break;
-            }
-            case("weds") : {
-                totalClassLength = t3;
-                break;
-            }
-            case("hurs") : {
-                totalClassLength = t4;
-                break;
-            }
-            case("fri") : {
-                totalClassLength = t5;
-                break;
-            }
-            case("total") : {
-                totalClassLength = t1+t2+t3+t4+t5;
-            }
-            default : break;
-        }
-        return totalClassLength;
+
+        return teachTime;
     }
 
-    public int tCourseNumCount(String tno) {
+    public int tCourseNumCount(String tid) {
         /**
          * @Author: Yang
-         * @Description: 统计教师一周内需要授课的总门数
-         * @param tno 教师编号
+         * @Description: 统计教师总共教授的课程总数
+         * @param tid 教师编号
          * @output: 返回总门数
          * @Date: Created in 12:07 2017/4/2
-         * @Modified By:
+         * @Modified By: zzh
          */
-        int courseNum = 0;    //统计一周内的课程总门数
-        CourseDAO courseDAO = new CourseDAOImpl();
-        List<Course> courses = new ArrayList<>();
-        Teacher teacher = new Teacher();
-        teacher.setAid(tno);
-        courses = courseDAO.findByTeacher(teacher);//获得该老师一周内的上课情况
-        courseNum = courses.size();
-        return courseNum;
-
+        InstructionDAO instructionDAO = new InstructionDAOImpl();
+        int courseNum = instructionDAO.getInstructionSumByTid(tid);    //统计教师教授的课程总门数
+        if(courseNum>=0)
+            return courseNum;
+        else
+            return 0;
     }
+
 
 }

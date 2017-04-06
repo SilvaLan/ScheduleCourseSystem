@@ -8,5 +8,9 @@ package courseschesystem.service;
  */
 public interface TeacherService {
 
+    //统计教师的授课时长
+    int[] teachTimeCount(String tid);
+    //统计教师总共教授的课程总数
+    int tCourseNumCount(String tid);
 
 }

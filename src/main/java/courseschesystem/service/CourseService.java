@@ -1,9 +1,5 @@
 package courseschesystem.service;
 
-import courseschesystem.entity.Course;
-
-import java.util.List;
-
 /**
  * @Author: zzh
  * @Description:
@@ -11,9 +7,6 @@ import java.util.List;
  * @Modified By:
  */
 public interface CourseService {
-
-    // 根据关键字，对课程表进行查询
-    List<Course> queryScheduleByKey(String keyType, String key);
-    // 将课程表从线性list转换为二维矩阵存储
-    Course[][] listToMatrix(List<Course> courses);
+    //将上课时间添加到course表中cid对应的记录中
+    boolean modifyCoursetimeToCourse(String coursetime);
 }

@@ -12,9 +12,18 @@ public class Course {
     private float credit;
     private String tid;
     private String aid;
+    private String majorid;
     private int classhour;
     private String examine;
+    private String coursetype;
+    private String rid;
+    private String inum;
+    private String cnum;
+    private int bweek;
+    private int eweek;
     private String evaluate;
+    private String coursetime;
+
 
     public String getCourseid() {
         return courseid;
@@ -79,4 +88,70 @@ public class Course {
     public void setEvaluate(String evaluate) {
         this.evaluate = evaluate;
     }
+
+    public String getMajorid() {
+        return majorid;
+    }
+
+    public void setMajorid(String majorid) {
+        this.majorid = majorid;
+    }
+
+    public String getRid() {
+        return rid;
+    }
+
+    public void setRid(String rid) {
+        this.rid = rid;
+    }
+
+    public int getBweek() {
+        return bweek;
+    }
+
+    public void setBweek(int bweek) {
+        this.bweek = bweek;
+    }
+
+    public int getEweek() {
+        return eweek;
+    }
+
+    public void setCnum(String cnum) {
+        this.cnum = cnum;
+    }
+
+    public String getCnum() {
+        return cnum;
+    }
+
+    public void setCoursetime(String coursetime) {
+        this.coursetime = coursetime;
+    }
+
+    public String getCoursetime() {
+        return coursetime;
+    }
+
+    public void setCoursetype(String coursetype) {
+        this.coursetype = coursetype;
+    }
+
+    public String getCoursetype() {
+        return coursetype;
+    }
+
+    public void setEweek(int eweek) {
+        this.eweek = eweek;
+    }
+
+    public String getInum() {
+        return inum;
+    }
+
+    public void setInum(String inum) {
+        this.inum = inum;
+    }
+
+
 }

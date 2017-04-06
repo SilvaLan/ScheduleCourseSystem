@@ -25,13 +25,13 @@ public class StudentAction extends SuperAction implements ModelDriven<List<Stude
 
     public String getStudentNumByMajor(){
         /**
-         * @Author: zzh
+         * @Author: Hu
          * @Description: 根据专业号majorid，统计本专业学生总数，
          *                通过 request.getParameter("majorid") 获取jsp页面的majorid
          *                通过 session.setAttribute("stuNumByMajor", stuNumByMajor) 给jsp页面返回学生数 stuNumByMajor
          * @output: return "getStudentNumByMajor_success" if count success, or return "getStudentNumByMajor_failure"
          * @Date: Created in 2:23 2017/4/2
-         * @Modified By:Hu
+         * @Modified By:
          */
         String majorid_String = request.getParameter("majorid");   //获取专业号majorid_String,类型String
         if (majorid_String!=null){
@@ -51,13 +51,13 @@ public class StudentAction extends SuperAction implements ModelDriven<List<Stude
 
     public String getStudentNumByCourse(){
         /**
-         * @Author: zzh
+         * @Author: Hu
          * @Description: 根据课程号cno，统计上某门课的学生总数
          *                通过 request.getParameter("cno") 获取jsp页面的cno
          *                通过 session.setAttribute("stuNumByCourse", stuNumByCourse) 给jsp页面返回学生数 stuNumByCourse
          * @output: return "getStudentNumByCourse_success" if count success, or return "getStudentNumByCourse_success"
          * @Date: Created in 2:26 2017/4/2
-         * @Modified By:Hu
+         * @Modified By:
          */
         String cno_String = request.getParameter("cno");   //获取专业号cno_String,类型String
         if (cno_String!=null){
@@ -75,7 +75,7 @@ public class StudentAction extends SuperAction implements ModelDriven<List<Stude
         }
     }
 
-    public String stuCourseNumCount(){
+    //public String stuCourseNumCount(){
         /**
          * @Author: zzh
          * @Description: 根据学号stuno，统计某学生每周的课程数
@@ -99,10 +99,10 @@ public class StudentAction extends SuperAction implements ModelDriven<List<Stude
         // }else {
         //    return "getCourseNumByTno_failure";      //未成功获取stuno_String，跳转到失败页面
         // }
-        return "";
-    }
+     //   return "";
+   //}
 
-    public String stuCourseTimeCount(){
+   //public String stuCourseTimeCount(){
         /**
          * @Author: zzh
          * @Description: 根据学号tno，统计某学生每周的上课时长
@@ -113,7 +113,7 @@ public class StudentAction extends SuperAction implements ModelDriven<List<Stude
          * @Modified By:Hu
          */
 
-        return "";
-    }
+       // return "";
+    //}
 
 }

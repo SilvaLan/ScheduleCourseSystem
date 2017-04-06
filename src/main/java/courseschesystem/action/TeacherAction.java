@@ -20,28 +20,24 @@ public class TeacherAction extends SuperAction implements ModelDriven<List<Teach
         return this.teachers;
     }
 
-    public String courseTimeCount(){
+    public String teachTimeCount(){
         /**
-         * @Author: zzh
+         * @Author: Hu
          * @Description: 根据教师编号tno，统计教师本学期每星期需要上课的时长，周一到周日的时长
          *                通过 request.getParameter("tno") 获取jsp页面的 tno
-         *                通过 session.setAttribute("totalTime", totalTime) 给jsp页面返回总时长 totalTime
-         *                monTime、tuseTime、wedsTime、thursTime、friTime、saturTime、sunTime 与 totalTime 类似
+         *                通过 session.setAttribute("time", times) 给jsp页面返回总时长 times数组
          * @output: return "courseTimeCount_success" if succeed or return "courseTimeCount_failure"
          * @Date: Created in 2:09 2017/4/2
-         * @Modified By:
+         * @Modified By: zzh
          */
         String tno_String = request.getParameter("tno");   //获取教师编号tno_String,类型String
+        int times[] = new int[8];
         if (tno_String!=null){
             TeacherServiceImpl teacherService = new TeacherServiceImpl();       //获取TeacherServiceImpl实例
-            int totalTime = teacherService.courseTimeCount("total",tno_String);      //调用tCourseNumCount获取学生数量
-            if(totalTime >=0){                          //人数>=0
-                HttpSession session = request.getSession();
-                session.setAttribute("totalTime",totalTime);        //向jsp页面发送totalNum
-                return "courseTimeCount_success";
-            }else{
-                return "courseTimeCount_failure";      //totalNum<0，跳转到失败页面
-            }
+            times = teacherService.teachTimeCount(tno_String);      //调用tCourseNumCount获取学生数量
+            HttpSession session = request.getSession();
+            session.setAttribute("times",times);        //向jsp页面发送times
+            return "courseTimeCount_success";
         }else {
             return "courseTimeCount_failure";      //未成功获取tno_String，跳转到失败页面
         }

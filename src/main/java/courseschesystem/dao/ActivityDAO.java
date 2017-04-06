@@ -7,4 +7,5 @@ package courseschesystem.dao;
  * @Modified By:
  */
 public interface ActivityDAO {
+    //增删查改
 }
