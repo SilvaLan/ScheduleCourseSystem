@@ -42,6 +42,7 @@ public class ArrangeAction extends SuperAction implements ModelDriven<List<Arran
         return "queryArrangeByDate_success";
     }
 
+    //排课动作，为某门课程排课，若无冲突，则排课成功
     public String arrangeCourse(){
         /**
          * @Author: zzh
@@ -50,7 +51,7 @@ public class ArrangeAction extends SuperAction implements ModelDriven<List<Arran
          *                  1.课程编号 courseid 专业缩写+XXXX
          *                  2.教室号 XXX
          *                  3.排课时间，即周几，第几节课 weekday,courseNum,通过这两个参数得到课时的号码courseIndex
-         *                    如周二第5节课，weekday=2，courseNum=5，可以得到课时号码为25
+         *                    如周二第5节课，weekday=2，courseNum=5，可以得到课时号码为24
          * @param
          * @output:
          * @Date: Created in 9:41 2017/4/6
@@ -67,8 +68,8 @@ public class ArrangeAction extends SuperAction implements ModelDriven<List<Arran
         int eweek = course.getEweek();  //结束周
 
         int day = Integer.parseInt(request.getParameter("day"));
-        int bcourse = Integer.parseInt(request.getParameter("bcourse"));
-        int ecourse = Integer.parseInt(request.getParameter("ecourse"));
+        int bcourse = Integer.parseInt(request.getParameter("bcourse"))-1;
+        int ecourse = Integer.parseInt(request.getParameter("ecourse"))-1;
 
         for(int i=bweek;i<=eweek;i++){
             for(int j=bcourse;j<=ecourse;j++){
@@ -83,16 +84,8 @@ public class ArrangeAction extends SuperAction implements ModelDriven<List<Arran
         return "ArrangeCourse_success";
     }
 
-
+    //为临时活动排教室，若无冲突，则安排教室成功
     public String arrangeActivity(){
-        /**
-         * @Author: zzh
-         * @Description: 为临时活动排教室，若无冲突，则安排教室成功
-         * @param
-         * @output:
-         * @Date: Created in 18:51 2017/4/6
-         * @Modified By:
-         */
         ArrangeService arrangeService = new ArrangeServiceImpl();
         HttpSession session = request.getSession();
 

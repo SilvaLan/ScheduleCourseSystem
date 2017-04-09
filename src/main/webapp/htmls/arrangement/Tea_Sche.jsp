@@ -156,88 +156,83 @@
                                 <th>星期五</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody name="schedule_map">
                             <th rowspan="4">上午</th>
                             <th>第1节</th>
-                            <td>--</td>
-                            <td>--</td>
-                            <td>--</td>
-                            <td>--</td>
-                            <td>--</td>
+                            <c:
                             </tr>
-                            <tr>
-                                <th>第2节</th>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
+                            <th>第2节</th>
+                            <td name="s11">--</td>
+                            <td name="s21">--</td>
+                            <td name="s31">--</td>
+                            <td name="s41">--</td>
+                            <td name="s51">--</td>
                             </tr>
                             <tr>
                                 <th>第3节</th>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
+                                <td name="s12">--</td>
+                                <td name="s22">--</td>
+                                <td name="s32">--</td>
+                                <td name="s42">--</td>
+                                <td name="s52">--</td>
                             </tr>
                             <tr>
                                 <th>第4节</th>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
+                                <td name="s13">--</td>
+                                <td name="s23">--</td>
+                                <td name="s33">--</td>
+                                <td name="s43">--</td>
+                                <td name="s53">--</td>
+                            </tr>
+                            <tr>
+                                <th>第5节</th>
+                                <td name="s14">--</td>
+                                <td name="s24">--</td>
+                                <td name="s34">--</td>
+                                <td name="s44">--</td>
+                                <td name="s54">--</td>
                             </tr>
                             <tr>
                                 <th rowspan="4">下午</th>
-                                <th>第5节</th>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                            </tr>
-                            <tr>
                                 <th>第6节</th>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
+                                <td name="s15">--</td>
+                                <td name="s25">--</td>
+                                <td name="s35">--</td>
+                                <td name="s45">--</td>
+                                <td name="s55">--</td>
                             </tr>
                             <tr>
                                 <th>第7节</th>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
+                                <td name="s16">--</td>
+                                <td name="s26">--</td>
+                                <td name="s36">--</td>
+                                <td name="s46">--</td>
+                                <td name="s56">--</td>
                             </tr>
                             <tr>
                                 <th>第8节</th>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
+                                <td name="s17">--</td>
+                                <td name="s27">--</td>
+                                <td name="s37">--</td>
+                                <td name="s47">--</td>
+                                <td name="s57">--</td>
+                            </tr>
+                            <tr>
+                                <th>第9节</th>
+                                <td name="s18">--</td>
+                                <td name="s28">--</td>
+                                <td name="s38">--</td>
+                                <td name="s48">--</td>
+                                <td name="s58">--</td>
                             </tr>
                             <tr>
                                 <th rowspan="2">晚上</th>
-                                <th>第9节</th>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                            </tr>
-                            <tr>
                                 <th>第10节</th>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
-                                <td>--</td>
+                                <td name="s19">--</td>
+                                <td name="s29">--</td>
+                                <td name="s39">--</td>
+                                <td name="s49">--</td>
+                                <td name="s59">--</td>
                             </tr>
                             </tbody>
                         </table>

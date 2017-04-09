@@ -3,6 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <jsp-config>
+
+    </jsp-config>
 
     <!-- SSH整合后web.xml配置 -->
     <!-- web.xml文件中需要配置的信息有: -->
@@ -55,6 +58,7 @@
     -->
 
 
+
     <!-- 首页，欢迎页面 -->
     <welcome-file-list>
         <welcome-file>/index.jsp</welcome-file>
@@ -64,4 +68,6 @@
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
+
+
 </web-app>

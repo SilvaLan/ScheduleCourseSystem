@@ -58,9 +58,18 @@ public class ScheduleServiceImpl implements ScheduleService{
         int weekdayIndex;
         int courseIndex;
         for (Schedule schedule:schedules) {
-            weekdayIndex = schedule.getInstime()/10;
-            courseIndex = schedule.getInstime()%10;
-            scheduleMatrix[courseIndex][weekdayIndex] = schedule;
+            String[] courseTimeArray = schedule.getCoursetime().split(",");    //将类似“11，12,13”字符串表示的时间分割数字存到该数组内
+            //通过循环来每门课程的上课时间数组来写入课表矩阵
+            for(int i = 0; i < courseTimeArray.length; i++){
+                int num = Integer.parseInt(courseTimeArray[i]);    //将时间字符串转换为数字
+                courseIndex = (num-1) / 10;
+                weekdayIndex = num % 10;
+                //余数为0说明是第十节课
+                if(weekdayIndex == 0) {
+                    weekdayIndex = 10;
+                }
+                scheduleMatrix[weekdayIndex][courseIndex] = schedule;    //CourseMatrix[i][j]的值即为周i第j节的课程
+            }
         }
         return scheduleMatrix;
     }

@@ -13,11 +13,10 @@ import java.util.List;
 /**
  * @Author: zzh
  * @Description:
- * @Date: Created in 18:10 2017/4/6
+ * @Date: Created in 10:53 2017/4/9
  * @Modified By:
  */
-public class ScheduleSystem extends SuperAction implements ModelDriven{
-
+public class ScheduleAction extends SuperAction implements ModelDriven<List<Schedule>>{
     private static final long serialVersionUID = 1L;
     private List<Schedule> schedules = new ArrayList<>();
     private HttpServletRequest request;
@@ -42,7 +41,10 @@ public class ScheduleSystem extends SuperAction implements ModelDriven{
             Schedule[][] list_list_Schedule = scheduleService.listToMatrix(schedules);         //将课程表从线性list转换为二维矩阵存储
             if (list_list_Schedule != null) {
                 HttpSession session = request.getSession();
-                session.setAttribute("schedule_list", list_list_Schedule);              //向jsp页面发送list_list_Schedule为空
+                session.setAttribute("schedule_map", list_list_Schedule);
+
+
+
                 return "queryMajorSchedule_success";                            //返回"queryMajorSchedule_success"，跳转到指定页面
             } else {
                 return "queryMajorSchedule_failure";            //list_list_Schedule为空，跳转到失败页面
@@ -77,5 +79,4 @@ public class ScheduleSystem extends SuperAction implements ModelDriven{
 
         return "";
     }
-
 }
