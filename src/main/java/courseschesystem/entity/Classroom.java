@@ -8,7 +8,7 @@ import javax.persistence.Id;
 /**
  * @Author: zzh
  * @Description:
- * @Date: Created in 20:12 2017/4/6
+ * @Date: Created in 21:15 2017/4/7
  * @Modified By:
  */
 @Entity
@@ -20,7 +20,7 @@ public class Classroom {
     @Id
     @Column(name = "rid")
     public String getRid() {
-        return rid;
+        return this.rid;
     }
 
     public void setRid(String rid) {
@@ -30,7 +30,7 @@ public class Classroom {
     @Basic
     @Column(name = "rname")
     public String getRname() {
-        return rname;
+        return this.rname;
     }
 
     public void setRname(String rname) {
@@ -40,7 +40,7 @@ public class Classroom {
     @Basic
     @Column(name = "seatnum")
     public int getSeatnum() {
-        return seatnum;
+        return this.seatnum;
     }
 
     public void setSeatnum(int seatnum) {
@@ -66,4 +66,5 @@ public class Classroom {
         result = 31 * result + seatnum;
         return result;
     }
+
 }

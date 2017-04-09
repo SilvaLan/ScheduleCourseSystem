@@ -1,5 +1,7 @@
 package courseschesystem.dao;
 
+import courseschesystem.entity.Teacher;
+
 import java.util.List;
 
 /**
@@ -9,9 +11,10 @@ import java.util.List;
  * @Modified By:
  */
 public interface TeacherDAO {
-    boolean addTeacher(Teacher teacher);
-    boolean deleteTeacher(Teacher teacher);
-    boolean updateTeacher(Teacher teacher);
+    boolean add(Teacher teacher);
+    boolean delete(Teacher teacher);
+    boolean update(Teacher teacher);
+    Teacher get(String id);
     List<Teacher> queryTeacher(Teacher teacher);
 
 }

@@ -1,5 +1,7 @@
 package courseschesystem.dao;
 
+import courseschesystem.entity.Selection;
+
 import java.util.List;
 
 /**
@@ -9,9 +11,10 @@ import java.util.List;
  * @Modified By:
  */
 public interface SelectionDAO {
-    boolean addSelection(Selection selection);
-    boolean deleteSelection(Selection selection);
-    boolean updateSelection(Selection selection);
+    boolean add(Selection selection);
+    boolean delete(Selection selection);
+    boolean update(Selection selection);
+    Selection get(String id);
     List<Selection> querySelection(Selection selection);
 
 }

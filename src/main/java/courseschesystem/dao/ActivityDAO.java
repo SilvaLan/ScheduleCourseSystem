@@ -1,5 +1,9 @@
 package courseschesystem.dao;
 
+import courseschesystem.entity.Activity;
+
+import java.util.List;
+
 /**
  * @Author: zzh
  * @Description:
@@ -7,5 +11,10 @@ package courseschesystem.dao;
  * @Modified By:
  */
 public interface ActivityDAO {
-    //增删查改
+    boolean add(Activity activity);
+    boolean delete(Activity activity);
+    boolean update(Activity activity);
+    Activity get(String id);
+
+    List<Activity> query(Activity activity);
 }

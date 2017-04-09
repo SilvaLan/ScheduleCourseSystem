@@ -9,7 +9,7 @@ import java.sql.Date;
 /**
  * @Author: zzh
  * @Description:
- * @Date: Created in 20:12 2017/4/6
+ * @Date: Created in 21:16 2017/4/7
  * @Modified By:
  */
 @Entity
@@ -21,6 +21,9 @@ public class Student {
     private String stuIDnum;
     private String sturace;
     private Date stuindate;
+    private String classid;
+    private String majorid;
+    private String aid;
     private String mail;
     private String edu;
 
@@ -95,6 +98,36 @@ public class Student {
     }
 
     @Basic
+    @Column(name = "classid")
+    public String getClassid() {
+        return classid;
+    }
+
+    public void setClassid(String classid) {
+        this.classid = classid;
+    }
+
+    @Basic
+    @Column(name = "majorid")
+    public String getMajorid() {
+        return majorid;
+    }
+
+    public void setMajorid(String majorid) {
+        this.majorid = majorid;
+    }
+
+    @Basic
+    @Column(name = "aid")
+    public String getAid() {
+        return aid;
+    }
+
+    public void setAid(String aid) {
+        this.aid = aid;
+    }
+
+    @Basic
     @Column(name = "mail")
     public String getMail() {
         return mail;
@@ -128,6 +161,9 @@ public class Student {
         if (stuIDnum != null ? !stuIDnum.equals(student.stuIDnum) : student.stuIDnum != null) return false;
         if (sturace != null ? !sturace.equals(student.sturace) : student.sturace != null) return false;
         if (stuindate != null ? !stuindate.equals(student.stuindate) : student.stuindate != null) return false;
+        if (classid != null ? !classid.equals(student.classid) : student.classid != null) return false;
+        if (majorid != null ? !majorid.equals(student.majorid) : student.majorid != null) return false;
+        if (aid != null ? !aid.equals(student.aid) : student.aid != null) return false;
         if (mail != null ? !mail.equals(student.mail) : student.mail != null) return false;
         return edu != null ? edu.equals(student.edu) : student.edu == null;
     }
@@ -141,6 +177,9 @@ public class Student {
         result = 31 * result + (stuIDnum != null ? stuIDnum.hashCode() : 0);
         result = 31 * result + (sturace != null ? sturace.hashCode() : 0);
         result = 31 * result + (stuindate != null ? stuindate.hashCode() : 0);
+        result = 31 * result + (classid != null ? classid.hashCode() : 0);
+        result = 31 * result + (majorid != null ? majorid.hashCode() : 0);
+        result = 31 * result + (aid != null ? aid.hashCode() : 0);
         result = 31 * result + (mail != null ? mail.hashCode() : 0);
         result = 31 * result + (edu != null ? edu.hashCode() : 0);
         return result;

@@ -4,8 +4,9 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="courseschesystem.entity.Instruction" table="instruction" schema="manage_system">
-        <id name="insid" column="insid"/>
-        <property name="instime" column="instime"/>
+    <class name="courseschesystem.entity.Academy" table="academy" schema="manage_system">
+        <id name="aid" column="aid"/>
+        <property name="aname" column="aname"/>
+
     </class>
 </hibernate-mapping>

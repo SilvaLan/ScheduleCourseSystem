@@ -20,7 +20,38 @@
             <result name="login_failure">/jsp/login.jsp</result>
         </action>
         -->
+        <!--
+        <action name="User_login" class="java.courseschesystem.action.UserAction" method="login">
+            <result name="login_success_student">/index.student.jsp</result>
+            <result name="login_success_teacher">/index.teacher.jsp</result>
+            <result name="login_success_manager">/index.manager.jsp</result>
+            <result name="login_failure">/jsp/login.jsp</result>
+        </action>
+        -->
+        <action name="Classroom_query" class="courseschesystem.action.ClassroomAction" method="queryClassroom">
+            <result name="queryClassroom_success"></result>
+        </action>
+
+        <action name="Arrange_queryArrangeByDate" class="courseschesystem.action.ArrangeAction" method="queryArrangeByDate">
+            <result name="queryArrangeByDate_success">../../htmls/arrangement/Adm_Room.jsp</result>
+        </action>
+
+        <action name="Arrange_arrangeCourse" class="courseschesystem.action.ArrangeAction" method="arrangeCourse">
+            <result name="arrangeCourse_success">../../htmls/arrangement/Adm_Course.jsp</result>
+            <result name="arrangeCourse_failure">../../htmls/arrangement/Adm_ArrangeFailure.jsp</result>
+        </action>
+
+        <action name="Arrange_arrangeActivity" class="courseschesystem.action.ArrangeAction" method="arrangeActivity">
+            <result name="arrangeActivity_success">../../htmls/arrangement/Adm_Activity.jsp</result>
+            <result name="arrangeActivity_failure">../../htmls/arrangement/Adm_ArrangeFailure.jsp</result>
+        </action>
+
+        <action name="Arrange_getActivity" class="courseschesystem.action.ArrangeAction" method="getActivity">
+            <result name="getActivity_success">../../htmls/arrangement/Adm_Activity.jsp</result>
+            <result name="getActivity_failure">../../htmls/arrangement/Adm_ArrangeFailure.jsp</result>
+        </action>
     </package>
+
     <!-- Add packages here -->
 
 </struts>

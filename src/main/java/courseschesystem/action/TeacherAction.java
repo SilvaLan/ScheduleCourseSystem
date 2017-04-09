@@ -1,6 +1,7 @@
 package courseschesystem.action;
 
 import com.opensymphony.xwork2.ModelDriven;
+import courseschesystem.entity.Teacher;
 import courseschesystem.service.impl.TeacherServiceImpl;
 
 import javax.servlet.http.HttpSession;

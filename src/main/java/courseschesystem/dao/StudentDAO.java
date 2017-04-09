@@ -1,5 +1,8 @@
 package courseschesystem.dao;
 
+import courseschesystem.entity.Course;
+import courseschesystem.entity.Student;
+
 import java.util.List;
 
 /**
@@ -9,18 +12,12 @@ import java.util.List;
  * @Modified By:
  */
 public interface StudentDAO {
-    /**
-     * @Author: Lily
-     * @Description:  Student的接口类
-     * @Date: Created in 10:46 2017/4/1
-     * @Modified By:
-     */
-    boolean addStudent(Student student);
-    boolean deleteStudent(Student student);
-    boolean updateStudent(Student student);
-    List<Student> queryStudent(Student student);
+    boolean add( Student student);
+    boolean delete(Student student);
+    boolean update(Student student);
+    Student get(String id);
 
-    List<Course> queryCourseByStudent(Student student);
+    List<Student> queryStudent(Student student);
 
     List<Student> findByCourse(Course course);
     List<Student> findByMajor(String majorId);

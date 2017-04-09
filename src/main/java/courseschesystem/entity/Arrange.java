@@ -1,14 +1,11 @@
 package courseschesystem.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @Author: zzh
  * @Description:
- * @Date: Created in 20:12 2017/4/6
+ * @Date: Created in 21:15 2017/4/7
  * @Modified By:
  */
 @Entity
@@ -18,6 +15,18 @@ public class Arrange {
     private String actype;
     private int acweek;
     private int acnum;
+    private String rid;
+
+    public Arrange() {
+    }
+    public Arrange(String arid, String caid, String actype, int acweek, int acnum, String rid) {
+        this.arid = arid;
+        this.caid = caid;
+        this.actype = actype;
+        this.acweek = acweek;
+        this.acnum = acnum;
+        this.rid = rid;
+    }
 
     @Id
     @Column(name = "arid")
@@ -91,5 +100,15 @@ public class Arrange {
         result = 31 * result + acweek;
         result = 31 * result + acnum;
         return result;
+    }
+
+    @Basic
+    @Column(name = "rid")
+    public String getRid() {
+        return rid;
+    }
+
+    public void setRid(String rid) {
+        this.rid = rid;
     }
 }

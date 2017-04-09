@@ -12,6 +12,8 @@
         <property name="tIDnum" column="tIDnum"/>
         <property name="trace" column="trace"/>
         <property name="tindate" column="tindate"/>
+        <property name="aid" column="aid"/>
         <property name="mail" column="mail"/>
+
     </class>
 </hibernate-mapping>

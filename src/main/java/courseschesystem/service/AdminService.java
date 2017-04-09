@@ -1,5 +1,7 @@
 package courseschesystem.service;
 
+import courseschesystem.entity.Classroom;
+
 import java.util.Date;
 import java.util.List;
 

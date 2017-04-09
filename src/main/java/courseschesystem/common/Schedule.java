@@ -23,6 +23,7 @@ public class Schedule {
     专业编号
      */
     private String majorid;
+    private String majorName;
 
     /*
     上课地点
@@ -33,7 +34,21 @@ public class Schedule {
     /*
     上课时间，原则上不会出现连着上四节以上的课
      */
-    private int instime;
+    private String coursetime;
+
+    public Schedule() {
+    }
+
+    public Schedule(String tid, String tname, String courseid, String coursename, String majorid,String majorName, String rid, String rname, String coursetime) {
+        this.tid = tid;
+        this.tname = tname;
+        this.courseid = courseid;
+        this.coursename = coursename;
+        this.majorid = majorid;
+        this.rid = rid;
+        this.rname = rname;
+        this.coursetime = coursetime;
+    }
 
     public String getTid() {
         return tid;
@@ -47,8 +62,8 @@ public class Schedule {
         return tname;
     }
 
-    public void setInstime(int instime) {
-        this.instime = instime;
+    public void setCoursetime(String coursetime) {
+        this.coursetime = coursetime;
     }
 
     public String getRid() {
@@ -64,8 +79,8 @@ public class Schedule {
         return courseid;
     }
 
-    public int getInstime() {
-        return instime;
+    public String getCoursetime() {
+        return coursetime;
     }
 
     public void setCourseid(String courseid) {
@@ -98,5 +113,13 @@ public class Schedule {
 
     public void setMajorid(String majorid) {
         this.majorid = majorid;
+    }
+
+    public String getMajorName() {
+        return majorName;
+    }
+
+    public void setMajorName(String majorName) {
+        this.majorName = majorName;
     }
 }

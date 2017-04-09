@@ -9,5 +9,6 @@
             <key-property name="stuid" column="stuid"/>
             <key-property name="courseid" column="courseid"/>
         </composite-id>
+
     </class>
 </hibernate-mapping>

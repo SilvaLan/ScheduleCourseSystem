@@ -1,20 +1,18 @@
 package courseschesystem.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * @Author: zzh
  * @Description:
- * @Date: Created in 20:12 2017/4/6
+ * @Date: Created in 21:16 2017/4/7
  * @Modified By:
  */
 @Entity
+@IdClass(SelectionPK.class)
 public class Selection {
     private String stuid;
     private String courseid;
-
     @Id
     @Column(name = "stuid")
     public String getStuid() {
@@ -52,4 +50,5 @@ public class Selection {
         result = 31 * result + (courseid != null ? courseid.hashCode() : 0);
         return result;
     }
+
 }

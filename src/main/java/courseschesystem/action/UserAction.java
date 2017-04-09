@@ -1,6 +1,7 @@
 package courseschesystem.action;
 
 import com.opensymphony.xwork2.ModelDriven;
+import courseschesystem.entity.User;
 import courseschesystem.service.UserService;
 import courseschesystem.service.impl.UserServiceImpl;
 
@@ -31,7 +32,10 @@ public class UserAction extends SuperAction implements ModelDriven<List<User>>{
          * @Date: Created in 12:26 2017/4/1
          * @Modified By:
          */
-        User user = new User(uid,upwd,utype);
+        User user = new User();
+        user.setUid(uid);
+        user.setUpwd(upwd);
+        user.setUtype(utype);
         UserService userService = new UserServiceImpl();
         if(userService.login(user)){
             /*

@@ -2,6 +2,7 @@ package courseschesystem.service.impl;
 
 import courseschesystem.dao.InstructionDAO;
 import courseschesystem.dao.impl.InstructionDAOImpl;
+import courseschesystem.entity.Instruction;
 
 import java.util.ArrayList;
 import java.util.List;

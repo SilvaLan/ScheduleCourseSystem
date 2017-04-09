@@ -1,5 +1,7 @@
 package courseschesystem.dao;
 
+import courseschesystem.entity.Classroom;
+
 import java.util.Date;
 import java.util.List;
 
@@ -10,10 +12,13 @@ import java.util.List;
  * @Modified By:
  */
 public interface ClassroomDAO {
-    boolean addClassroom(Classroom classroom);
-    boolean deleteClassroom(Classroom classroom);
-    boolean updateClassroom(Classroom classroom);
-    List<Classroom> queryClassroom(Classroom classroom);
+    boolean add(Classroom classroom);
+    boolean delete(Classroom classroom);
+    boolean update(Classroom classroom);
+    Classroom get(String id);
+
+    //分页查看所有教室使用情况
+    List<Classroom> queryClassroom();
     List<Classroom> queryClassroomByDate(Date date);
 
 }

@@ -8,15 +8,19 @@
         <id name="courseid" column="courseid"/>
         <property name="coursename" column="coursename"/>
         <property name="credit" column="credit"/>
+        <property name="tid" column="tid"/>
+        <property name="aid" column="aid"/>
         <property name="classhour" column="classhour"/>
         <property name="examine" column="examine"/>
         <property name="coursetype" column="coursetype"/>
-        <property name="rid" column="rid"/>
         <property name="lnum" column="lnum"/>
         <property name="cnum" column="cnum"/>
         <property name="bweek" column="bweek"/>
         <property name="eweek" column="eweek"/>
         <property name="evaluate" column="evaluate"/>
         <property name="coursetime" column="coursetime"/>
+        <property name="majorid" column="majorid"/>
+        <property name="rid" column="rid"/>
+
     </class>
 </hibernate-mapping>

@@ -1,6 +1,8 @@
 package courseschesystem.dao.impl;
 
+import courseschesystem.dao.BaseHibernateDAO;
 import courseschesystem.dao.InstructionDAO;
+import courseschesystem.entity.Instruction;
 
 import java.util.List;
 
@@ -10,23 +12,24 @@ import java.util.List;
  * @Date: Created in 14:24 2017/4/6
  * @Modified By:
  */
-public class InstructionDAOImpl implements InstructionDAO {
+public class InstructionDAOImpl extends BaseHibernateDAO implements InstructionDAO {
     //添加授课记录
-    public boolean addInstruction(Instruction instruction){
-
-
-        return true;
+    public boolean add(Instruction instruction){
+        return super.add(instruction);
     }
     //删除授课记录
-    public boolean deleteInstruction(Instruction instruction){
-
-        return  true;
+    public boolean delete(Instruction instruction){
+        return super.delete(instruction);
     }
     //修改授课记录
-    public boolean modifyInstruction(Instruction instruction){
-
-        return  true;
+    public boolean update(Instruction instruction){
+        return  super.update(instruction);
     }
+
+    public Instruction get(String id){
+        return (Instruction)super.get(Instruction.class,id);
+    }
+
     //查询授课记录
     public List<Instruction> queryInstruction(Instruction instruction){
 

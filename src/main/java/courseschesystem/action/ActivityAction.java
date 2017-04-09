@@ -21,4 +21,6 @@ public class ActivityAction extends SuperAction implements ModelDriven<List<Acti
     public List<Activity> getModel() {
         return this.activities;
     }
+
+
 }

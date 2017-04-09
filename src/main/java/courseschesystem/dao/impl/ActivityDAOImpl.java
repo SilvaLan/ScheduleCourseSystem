@@ -1,6 +1,8 @@
 package courseschesystem.dao.impl;
 
 import courseschesystem.dao.ActivityDAO;
+import courseschesystem.dao.BaseHibernateDAO;
+import courseschesystem.entity.Activity;
 
 import java.util.List;
 
@@ -10,27 +12,30 @@ import java.util.List;
  * @Date: Created in 19:21 2017/4/5
  * @Modified By:
  */
-public class ActivityDAOImpl implements ActivityDAO{
+public class ActivityDAOImpl extends BaseHibernateDAO implements ActivityDAO{
 
-    /**
-     * @Author:
-     * @Description: add 增加
-     * @param
-     * @output:
-     * @Date: Created in 19:24 2017/4/5
-     * @Modified By:
-     */
 
-    /**
-     * @Author:
-     * @Description: delete 删除
-     * @param
-     * @output:
-     * @Date: Created in 19:24 2017/4/5
-     * @Modified By:
-     */
+    @Override
+    public boolean add(Activity activity){
+        return super.add(activity);
+    }
 
-    public List<Activity> queryActivity(Activity activity){
+    @Override
+    public boolean delete(Activity activity){
+        return  super.delete(activity);
+    }
+
+    @Override
+    public boolean update(Activity activity){
+        return  super.update(activity);
+    }
+
+    @Override
+    public Activity get(String id){
+        return (Activity)super.get(Activity.class,id);
+    }
+
+    public List<Activity> query(Activity activity){
         /**
          * @Author:
          * @Description: 查找

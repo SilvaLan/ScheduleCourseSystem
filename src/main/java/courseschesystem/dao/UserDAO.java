@@ -1,5 +1,7 @@
 package courseschesystem.dao;
 
+import courseschesystem.entity.User;
+
 import java.util.List;
 
 /**
@@ -9,8 +11,9 @@ import java.util.List;
  * @Modified By:
  */
 public interface UserDAO {
-    boolean addUser(User user);
-    boolean deleteUser(User user);
-    boolean updateUser(User user);
+    boolean add(User user);
+    boolean delete(User user);
+    boolean update(User user);
+    User get(String id);
     List<User> queryUser(User user);
 }

@@ -1,8 +1,11 @@
 package courseschesystem.action;
 
 import com.opensymphony.xwork2.ModelDriven;
+import courseschesystem.entity.Classroom;
 import courseschesystem.service.AdminService;
+import courseschesystem.service.ClassroomService;
 import courseschesystem.service.impl.AdminServiceImpl;
+import courseschesystem.service.impl.ClassroomServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -22,14 +25,20 @@ public class ClassroomAction extends SuperAction implements ModelDriven<List<Cla
         return this.classrooms;
     }
 
+    //查询所有教室信息
+    public String queryClassroom(){
+        ClassroomService classroomService = new ClassroomServiceImpl();
+        classrooms = classroomService.queryClassroom();
+
+        System.out.println("classroom number = " + classrooms.size());
+
+        session.setAttribute("classrooms",classrooms);
+
+        return "queryClassroom_success";
+    }
+
+    //查询教室使用情况
     public String queryClassroomByDate() {
-        /**
-         * @Author: zzh
-         * @Description: 查询时间为date的教室使用情况，通过 request.getParameter("date") 获取jsp页面的date
-         * @output: return "queryClassroom_success" or "queryClassroom_failure"
-         * @Date: Created in 12:15 2017/4/1
-         * @Modified By:Hu
-         */
         String roomData_String = request.getParameter("data");   //获取时间data,类型String
         if (roomData_String != null) {
             Date roomData_Date = new Date(roomData_String);

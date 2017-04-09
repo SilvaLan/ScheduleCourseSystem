@@ -9,7 +9,7 @@ import java.sql.Date;
 /**
  * @Author: zzh
  * @Description:
- * @Date: Created in 20:12 2017/4/6
+ * @Date: Created in 21:16 2017/4/7
  * @Modified By:
  */
 @Entity
@@ -21,6 +21,7 @@ public class Teacher {
     private String tIDnum;
     private String trace;
     private Date tindate;
+    private String aid;
     private String mail;
 
     @Id
@@ -94,6 +95,16 @@ public class Teacher {
     }
 
     @Basic
+    @Column(name = "aid")
+    public String getAid() {
+        return aid;
+    }
+
+    public void setAid(String aid) {
+        this.aid = aid;
+    }
+
+    @Basic
     @Column(name = "mail")
     public String getMail() {
         return mail;
@@ -117,6 +128,7 @@ public class Teacher {
         if (tIDnum != null ? !tIDnum.equals(teacher.tIDnum) : teacher.tIDnum != null) return false;
         if (trace != null ? !trace.equals(teacher.trace) : teacher.trace != null) return false;
         if (tindate != null ? !tindate.equals(teacher.tindate) : teacher.tindate != null) return false;
+        if (aid != null ? !aid.equals(teacher.aid) : teacher.aid != null) return false;
         return mail != null ? mail.equals(teacher.mail) : teacher.mail == null;
     }
 
@@ -129,6 +141,7 @@ public class Teacher {
         result = 31 * result + (tIDnum != null ? tIDnum.hashCode() : 0);
         result = 31 * result + (trace != null ? trace.hashCode() : 0);
         result = 31 * result + (tindate != null ? tindate.hashCode() : 0);
+        result = 31 * result + (aid != null ? aid.hashCode() : 0);
         result = 31 * result + (mail != null ? mail.hashCode() : 0);
         return result;
     }

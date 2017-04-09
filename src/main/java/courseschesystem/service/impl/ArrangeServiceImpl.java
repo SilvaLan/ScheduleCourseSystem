@@ -1,8 +1,16 @@
 package courseschesystem.service.impl;
 
+import courseschesystem.dao.ActivityDAO;
 import courseschesystem.dao.ArrangeDAO;
+import courseschesystem.dao.CourseDAO;
+import courseschesystem.dao.impl.ActivityDAOImpl;
 import courseschesystem.dao.impl.ArrangeDAOImpl;
+import courseschesystem.dao.impl.CourseDAOImpl;
+import courseschesystem.entity.Activity;
+import courseschesystem.entity.Arrange;
 import courseschesystem.service.ArrangeService;
+
+import java.util.List;
 
 /**
  * @Author: zzh
@@ -12,7 +20,13 @@ import courseschesystem.service.ArrangeService;
  */
 public class ArrangeServiceImpl implements ArrangeService{
 
-    public boolean arrangeCourse(String courseid,String rid,int courseIndex){
+    public List<Arrange> queryArrangeByDate(int week,int day){
+        ArrangeDAO arrangeDAO = new ArrangeDAOImpl();
+
+        return arrangeDAO.queryArrangeByDate(week,day);
+    }
+
+    public boolean arrangeCourse(String courseid,String rid,int week,int courseIndex){
         /**
          * @Author: zzh
          * @Description: 为某门课程排课，若无冲突，则排课成功
@@ -35,7 +49,10 @@ public class ArrangeServiceImpl implements ArrangeService{
          * @Date: Created in 14:04 2017/4/6
          * @Modified By:
          */
-        return true;
+
+        return checkCourseid(courseid) &&
+                checkClassroomArrange(rid, week, courseIndex) &&
+                checkTeacherInstruction(courseid, week, courseIndex);
     }
 
     public boolean checkCourseid(String courseid){
@@ -47,8 +64,8 @@ public class ArrangeServiceImpl implements ArrangeService{
          * @Date: Created in 13:26 2017/4/6
          * @Modified By:
          */
-
-        return true;
+        CourseDAO courseDAO = new CourseDAOImpl();
+        return courseDAO.get(courseid) != null;
     }
 
     public boolean checkClassroomArrange(String rid,int week,int courseIndex){
@@ -61,12 +78,11 @@ public class ArrangeServiceImpl implements ArrangeService{
          * @Date: Created in 13:28 2017/4/6
          * @Modified By:
          */
-
-
-        return true;
+        ArrangeDAO arrangeDAO = new ArrangeDAOImpl();
+        return arrangeDAO.queryArrangeByRwc(rid, week, courseIndex) != null;
     }
 
-    public boolean checkTeacherInstruction(int week,int courseIndex){
+    public boolean checkTeacherInstruction(String courseid,int week,int courseIndex){
         /**
          * @Author: zzh
          * @Description: 检查第i周第j节课，该教师没有其他授课任务
@@ -79,7 +95,12 @@ public class ArrangeServiceImpl implements ArrangeService{
         Arrange arrange = new Arrange();
         ArrangeDAO arrangeDAO = new ArrangeDAOImpl();
         //调用arrangeDAO的query方法
-        return true;
+        return arrangeDAO.queryArrangeByCwc(courseid, week, courseIndex) != null;
+    }
+
+    public Activity getActivity(String acid){
+        ActivityDAO activityDAO = new ActivityDAOImpl();
+        return activityDAO.get(acid);
     }
 
 }

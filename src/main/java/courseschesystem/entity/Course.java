@@ -8,7 +8,7 @@ import javax.persistence.Id;
 /**
  * @Author: zzh
  * @Description:
- * @Date: Created in 20:12 2017/4/6
+ * @Date: Created in 21:16 2017/4/7
  * @Modified By:
  */
 @Entity
@@ -16,6 +16,8 @@ public class Course {
     private String courseid;
     private String coursename;
     private double credit;
+    private String tid;
+    private String aid;
     private int classhour;
     private String examine;
     private String coursetype;
@@ -26,6 +28,8 @@ public class Course {
     private int eweek;
     private String evaluate;
     private String coursetime;
+    private String majorid;
+
 
     @Id
     @Column(name = "courseid")
@@ -55,6 +59,26 @@ public class Course {
 
     public void setCredit(double credit) {
         this.credit = credit;
+    }
+
+    @Basic
+    @Column(name = "tid")
+    public String getTid() {
+        return tid;
+    }
+
+    public void setTid(String tid) {
+        this.tid = tid;
+    }
+
+    @Basic
+    @Column(name = "aid")
+    public String getAid() {
+        return aid;
+    }
+
+    public void setAid(String aid) {
+        this.aid = aid;
     }
 
     @Basic
@@ -157,6 +181,16 @@ public class Course {
         this.coursetime = coursetime;
     }
 
+    @Basic
+    @Column(name = "majorid")
+    public String getMajorid() {
+        return majorid;
+    }
+
+    public void setMajorid(String majorid) {
+        this.majorid = majorid;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -172,11 +206,14 @@ public class Course {
         if (eweek != course.eweek) return false;
         if (courseid != null ? !courseid.equals(course.courseid) : course.courseid != null) return false;
         if (coursename != null ? !coursename.equals(course.coursename) : course.coursename != null) return false;
+        if (tid != null ? !tid.equals(course.tid) : course.tid != null) return false;
+        if (aid != null ? !aid.equals(course.aid) : course.aid != null) return false;
         if (examine != null ? !examine.equals(course.examine) : course.examine != null) return false;
         if (coursetype != null ? !coursetype.equals(course.coursetype) : course.coursetype != null) return false;
         if (rid != null ? !rid.equals(course.rid) : course.rid != null) return false;
         if (evaluate != null ? !evaluate.equals(course.evaluate) : course.evaluate != null) return false;
-        return coursetime != null ? coursetime.equals(course.coursetime) : course.coursetime == null;
+        if (coursetime != null ? !coursetime.equals(course.coursetime) : course.coursetime != null) return false;
+        return majorid != null ? majorid.equals(course.majorid) : course.majorid == null;
     }
 
     @Override
@@ -187,6 +224,8 @@ public class Course {
         result = 31 * result + (coursename != null ? coursename.hashCode() : 0);
         temp = Double.doubleToLongBits(credit);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (tid != null ? tid.hashCode() : 0);
+        result = 31 * result + (aid != null ? aid.hashCode() : 0);
         result = 31 * result + classhour;
         result = 31 * result + (examine != null ? examine.hashCode() : 0);
         result = 31 * result + (coursetype != null ? coursetype.hashCode() : 0);
@@ -197,6 +236,7 @@ public class Course {
         result = 31 * result + eweek;
         result = 31 * result + (evaluate != null ? evaluate.hashCode() : 0);
         result = 31 * result + (coursetime != null ? coursetime.hashCode() : 0);
+        result = 31 * result + (majorid != null ? majorid.hashCode() : 0);
         return result;
     }
 }

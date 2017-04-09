@@ -8,5 +8,6 @@
         <id name="rid" column="rid"/>
         <property name="rname" column="rname"/>
         <property name="seatnum" column="seatnum"/>
+
     </class>
 </hibernate-mapping>

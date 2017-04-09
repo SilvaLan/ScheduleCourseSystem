@@ -2,6 +2,7 @@ package courseschesystem.service.impl;
 
 import courseschesystem.dao.CourseDAO;
 import courseschesystem.dao.impl.CourseDAOImpl;
+import courseschesystem.entity.Course;
 import courseschesystem.service.CourseService;
 
 /**
@@ -24,7 +25,12 @@ public class CourseServiceImpl implements CourseService{
         CourseDAO courseDAO = new CourseDAOImpl();
         Course course = new Course();
         course.setCoursetime(coursetime);
-        return courseDAO.updateCourse(course);
+        return courseDAO.update(course);
+    }
+
+    public Course getCourse(String courseid){
+        CourseDAO courseDAO = new CourseDAOImpl();
+        return courseDAO.get(courseid);
     }
 
 }

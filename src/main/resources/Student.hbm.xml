@@ -12,7 +12,11 @@
         <property name="stuIDnum" column="stuIDnum"/>
         <property name="sturace" column="sturace"/>
         <property name="stuindate" column="stuindate"/>
+        <property name="classid" column="classid"/>
+        <property name="majorid" column="majorid"/>
+        <property name="aid" column="aid"/>
         <property name="mail" column="mail"/>
         <property name="edu" column="edu"/>
+
     </class>
 </hibernate-mapping>

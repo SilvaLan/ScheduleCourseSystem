@@ -2,8 +2,11 @@ package courseschesystem.action;
 
 import com.opensymphony.xwork2.ModelDriven;
 import courseschesystem.entity.Course;
+import courseschesystem.service.CourseService;
+import courseschesystem.service.impl.CourseServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,16 +27,10 @@ public class CourseAction extends SuperAction implements ModelDriven<List<Course
         return this.courses;
     }
 
-    public String queryCourse(){
-        /**
-         * @Author: zzh
-         * @Description: 查看课程详细信息
-         * @param
-         * @output:
-         * @Date: Created in 18:24 2017/4/6
-         * @Modified By:
-         */
-
+    public String getCourse(){
+        CourseService courseService = new CourseServiceImpl();
+        HttpSession session = request.getSession();
+        courseService.getCourse(session.getAttribute("courseid").toString());
         return "";
     }
 
